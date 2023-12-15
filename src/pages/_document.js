@@ -7,6 +7,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script src="https://kit.fontawesome.com/27bd3bf8d7.js" async></script>
       </body>
     </Html>
   )
