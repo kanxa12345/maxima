@@ -1,13 +1,15 @@
 import React from 'react'
+import Banner from './Banner';
+import ProductCat from './ProductCat';
+import Feature from './Feature';
 
 
 const Main = () => {
     return (
         <>
-           <div className='py-10'>
-
-            <h1>THis is home page</h1>
-            </div> 
+            <Banner />
+            <Feature />
+            <ProductCat />
         </>
     )
 }

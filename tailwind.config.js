@@ -21,7 +21,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        // color1: '#0A76BD',
+        brandColor: '#0001FB',
+        secondColor: '#0F2167',
+        thirdColor: '#3558E0',
         // color2: '#EA1B8F',
         // color3: '#F2F02D',
         // color4: 'rgb(81, 203, 255)',

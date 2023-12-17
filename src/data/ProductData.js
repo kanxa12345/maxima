@@ -4,7 +4,7 @@ export default [
         category: 'Laptops & Computers',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/laptop1.webp',
         price: '',
         description: ''
     },
@@ -13,7 +13,7 @@ export default [
         category: 'Mobiles & Tablets',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/mobile1.webp',
         price: '',
         description: ''
     },
@@ -22,7 +22,7 @@ export default [
         category: 'Audios',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/audio1.webp',
         price: '',
         description: ''
     },
@@ -31,7 +31,7 @@ export default [
         category: 'Storage',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/storage1.webp',
         price: '',
         description: ''
     },
@@ -40,7 +40,7 @@ export default [
         category: 'Wearable',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/wearable1.webp',
         price: '',
         description: ''
     },
@@ -49,7 +49,7 @@ export default [
         category: 'Cameras',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/camera1.webp',
         price: '',
         description: ''
     },
@@ -58,7 +58,7 @@ export default [
         category: 'Network Products',
         subCategory: '',
         product: '',
-        imageUrl: '',
+        imageUrl: '/images/product-images/network1.webp',
         price: '',
         description: ''
     },
