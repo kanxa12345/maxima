@@ -59,9 +59,9 @@ const Header = () => {
         <>
             <header className={`sticky top-0 z-40 bg-white ${scrolled ? 'shadow-[0_0_10px_2px_rgba(0,0,0,0.2)]' : ''}`}>
                 <div className="container flex justify-between items-center py-2">
-                    <a href="#">
+                    <Link href="/">
                         <Image src="/images/logo.png" width={200} height={100} alt='logo' className='w-[150px]' />
-                    </a>
+                    </Link>
                     <div className='w-1/3 relative'>
                         <input type="text" placeholder='search product here...' className='border p-2 rounded-md w-full' />
                         <i className="fa-solid fa-magnifying-glass absolute right-2 top-1/2 -translate-y-1/2"></i>
@@ -74,7 +74,7 @@ const Header = () => {
                             <i className="fa-solid fa-cart-shopping"></i>
                         </button>
                         <button>
-                            <i class="fa-solid fa-heart"></i>
+                            <i className="fa-solid fa-heart"></i>
                         </button>
                     </div>
                 </div>
@@ -90,7 +90,8 @@ const Header = () => {
                             <div className="flex flex-col lg:w-[200px] w-full h-full">
                                 {Object.values(groupedData).map((categoryItem, categoryIndex) => (
                                     <div key={categoryIndex}>
-                                        <a
+                                        <Link
+                                            href="#"
                                             className="p-2 lg:border-b lg:hover:text-color1 inline-block w-full relative"
                                             // to={`/ProductCat/${categoryItem.category}`}
                                             onMouseEnter={() => { if (window.innerWidth > 1024) { handleCategoryHover(categoryItem.category, true) } }}
@@ -107,7 +108,8 @@ const Header = () => {
                                                 <div className={`lg:bg-white bg-black lg:text-black text-gray-500 ${categoryMenus[categoryItem.category] ? 'block' : 'hidden'} lg:absolute lg:top-[10px] lg:left-[200px] lg:border lg:mt-0 mt-2`}>
                                                     <div className="flex flex-col lg:w-[160px] w-full h-full">
                                                         {Object.values(categoryItem.subcategories).map((subCategoryItem, subCategoryIndex) => (
-                                                            <a key={subCategoryIndex}
+                                                            <Link key={subCategoryIndex}
+                                                                href="#"
                                                                 className="p-2 lg:border-b lg:hover:text-color1 inline-block w-full relative"
                                                                 // to={`/ProductCat/${categoryItem.category}/${subCategoryItem.subCategory}`}
                                                                 onMouseEnter={() => { if (window.innerWidth > 1024) { handleSubcategoryHover(subCategoryItem.subCategory, true) } }}
@@ -123,23 +125,24 @@ const Header = () => {
                                                                     <div className={`lg:bg-white lg:text-black text-gray-400 ${subcategoryMenus[subCategoryItem.subCategory] ? 'block' : 'hidden'} lg:absolute lg:top-[10px] lg:left-[160px] lg:border lg:mt-0 mt-2`}>
                                                                         <div className="flex flex-col lg:w-[160px] w-full h-full">
                                                                             {subCategoryItem.products.map((productItem, productIndex) => (
-                                                                                <a
+                                                                                <Link
+                                                                                    href="#"
                                                                                     onClick={() => { setCategoryMenus({}); setSubcategoryMenus({}) }} key={productIndex}
                                                                                     className="p-2 lg:border-b lg:hover:text-color1 inline-block w-full relative lg:text-base text-sm"
                                                                                 // to={`/ProductCat/${categoryItem.category}/${subCategoryItem.subCategory}/${productItem.product}`}
                                                                                 >
                                                                                     {productItem.product}
-                                                                                </a>
+                                                                                </Link>
                                                                             ))}
                                                                         </div>
                                                                     </div>
                                                                 )}
-                                                            </a>
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                 </div>
                                             )}
-                                        </a>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
@@ -147,10 +150,10 @@ const Header = () => {
                     </div>
                     <nav>
                         <ul className='flex items-center gap-4'>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/aboutus">About</Link></li>
+                            <li><Link href="/contactus">Contact Us</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
                         </ul>
                     </nav>
                 </div>
