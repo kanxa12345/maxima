@@ -24,8 +24,8 @@ const ProductCat = () => {
                 <h2 className='text-2xl font-medium'>Categories</h2>
                 <div className="w-full grid grid-cols-5 gap-4">
                     {Object.values(groupedData).map((dataItem, index) => (
-                        <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group'>
-                            <Link href="#" className='overflow-hidden'>
+                        <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm'>
+                            <Link href={`/category/${dataItem.title}`} className='overflow-hidden'>
                                 <Image height={200} width={200} className='w-full h-[250px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' src={dataItem.thumbnailImage} alt={dataItem.title} />
                             </Link>
                             <h3 className='text-xl font-medium'>{dataItem.title}</h3>

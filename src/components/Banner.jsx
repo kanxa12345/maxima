@@ -21,7 +21,7 @@ const Banner = () => {
         <section className='w-full h-auto'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                spaceBetween={50}
+                spaceBetween={10}
                 slidesPerView={1}
                 loop={true}
                 navigation={{
