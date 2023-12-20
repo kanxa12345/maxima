@@ -65,17 +65,26 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex flex-col items-start gap-2'>
-                            <h3 className='text-xl font-medium'>Subscribe</h3>
-                            <form onSubmit={handleSubmit} className='md:w-10/12 sm:w-2/3 w-11/12'>
-                                <div className='flex items-center text-sm gap-2 bg-white px-2 py-1 border border-gray-500 rounded-[4px] xl:w-full md:w-2/3 w-full'>
-                                    <div className='flex-grow'>
-                                        <input type="email" id="email" name="email" placeholder="Your Email" required value={email} onChange={handleEmailChange} className='focus:outline-none bg-transparent rounded-sm w-full' />
+                        <div className='flex flex-col items-start gap-3'>
+                            <div className='flex flex-col items-start gap-1 w-full'>
+                                <h3 className='text-xl font-medium'>Subscribe</h3>
+                                <form onSubmit={handleSubmit} className='md:w-10/12 sm:w-2/3 w-11/12'>
+                                    <div className='flex items-center text-sm gap-2 bg-white px-2 py-1 border border-gray-500 rounded-[4px] xl:w-full md:w-2/3 w-full'>
+                                        <div className='flex-grow'>
+                                            <input type="email" id="email" name="email" placeholder="Your Email" required value={email} onChange={handleEmailChange} className='focus:outline-none bg-transparent rounded-sm w-full' />
+                                        </div>
+                                        <button type="submit" className='px-2 py-1'>Join</button>
                                     </div>
-                                    <button type="submit" className='px-2 py-1'>Join</button>
+                                </form>
+                            </div>
+                            <div className='flex flex-col items-start gap-1 w-full'>
+                                <h3 className='text-xl font-medium'>We Accept</h3>
+                                <div className='w-full flex gap-4'>
+                                    <Image src="/images/payment-method/esewa.webp" height={100} width={100} alt='esewa' className='w-[70px] h-7 object-cover' />
+                                    <Image src="/images/payment-method/mastercard.webp" height={100} width={100} alt='mastercard' className='w-[70px] h-7 object-cover' />
+                                    <Image src="/images/payment-method/khalti.webp" height={100} width={100} alt='khalti' className='w-[70px] h-7 object-cover' />
                                 </div>
-                            </form>
-                            <h3></h3>
+                            </div>
                         </div>
                     </div>
                 </div>

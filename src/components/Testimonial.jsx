@@ -27,7 +27,7 @@ const Testimonial = () => {
                         '--swiper-navigation-size': '20px',
                         '--swiper-navigation-background': '#000',
                     }}
-                    autoplay={{ delay: 5000 }}
+                    autoplay={{ delay: 6000 }}
                 >
                     {TestimonialData.map((dataItem, index) => (
                         <SwiperSlide key={index}>

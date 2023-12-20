@@ -52,7 +52,7 @@ const Client = () => {
                     >
                         {clientImages.map((image, index) => (
                             <SwiperSlide key={index}>
-                                <Image height={200} width={200} className='md:h-[100px] h-[40px] w-full bg-white p-1 object-contain' src={image} alt="client-image" />
+                                <Image height={200} width={200} className='md:h-[90px] h-[40px] w-full bg-white p-1 object-contain' src={image} alt="client-image" />
                             </SwiperSlide>
                         ))}
                     </Swiper>
