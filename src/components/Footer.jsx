@@ -90,7 +90,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='container pt-3 border-t border-gray-400'>
-                <p className='text-sm text-center'>Copyright &copy; Maxima Pvt. Ltd. All right reserved. Powered by <a href="https://radiantnepal.com/" className='underline font-medium'>Radiant Infotech</a></p>
+                <p className='text-sm text-center'>Copyright &copy; Maxima International Pvt. Ltd. All right reserved. Powered by <a href="https://radiantnepal.com/" className='underline font-medium'>Radiant Infotech</a></p>
             </div>
         </footer>
     )
