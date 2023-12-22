@@ -11,7 +11,7 @@ const product = () => {
     return (
         <>
             <section className='h-[150px] relative'>
-                <Image height={200} width={200} className='absolute w-full h-full indent-0 object-cover' src="/images/banner-image/img1.avif" alt="bg-image" />
+                <Image src="/images/banner-image/img1.avif" priority={true}  height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
                 <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
                 <div className="container flex justify-center items-center h-full relative text-white">
                     <ul className='flex sm:flex-row flex-col items-center gap-1 md:text-lg font-medium'>
@@ -33,7 +33,7 @@ const product = () => {
                 {data && (
                     <div className="container flex gap-6">
                         <div className='w-1/3'>
-                            <Image src={data.imageUrl} width={200} height={200} alt={data.product} />
+                            <Image src={data.imageUrl} priority={true}  width={200} height={200} alt={data.product} className='w-[150px] h-[150px] object-cover' />
                         </div>
                     </div>
                 )}

@@ -26,7 +26,7 @@ const category = () => {
   return (
     <>
       <section className='h-[150px] relative'>
-        <Image height={200} width={200} className='absolute w-full h-full indent-0 object-cover' src="/images/banner-image/img1.avif" alt="bg-image" />
+        <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
         <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
         <div className="container flex justify-center items-center h-full relative text-white">
           <ul className='flex items-center gap-1 md:text-lg font-medium'>
@@ -42,9 +42,9 @@ const category = () => {
           <div className="w-full grid grid-cols-5 gap-4">
             {Object.values(groupedData).map((dataItem, index) => (
               <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm'>
-                <Link href={`/category/${category}/${dataItem.title}`} className='overflow-hidden'>
-                  <Image height={200} width={200} className='w-full h-[250px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' src={dataItem.thumbnailImage} alt={dataItem.title} />
-                </Link>
+                <button onClick={() => router.push(`/category/${category}/${dataItem.title}`)} className='overflow-hidden'>
+                  <Image priority={true} height={200} width={200} className='w-full h-[250px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' src={dataItem.thumbnailImage} alt={dataItem.title} />
+                </button>
                 <h3 className='text-xl font-medium'>{dataItem.title}</h3>
               </div>
             ))}
