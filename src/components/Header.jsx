@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import React, { useEffect, useState } from 'react';
 import Login from './Login';
+import { useSelector } from 'react-redux';
+import DisplayCart from './DisplayCart';
 
 const Header = () => {
     const router = useRouter()
@@ -68,6 +70,9 @@ const Header = () => {
         setIsOpen(false);
         document.body.classList.remove('overflow-hidden')
     }
+
+    const cartItems = useSelector(state => state.cart)
+    const [openCart, setOpenCart] = useState(false)
     return (
         <>
             <header className={`sticky top-0 z-40 bg-white ${scrolled ? 'shadow-[0_0_10px_2px_rgba(0,0,0,0.2)]' : ''}`}>
@@ -83,8 +88,9 @@ const Header = () => {
                         <button onClick={openModal} className='flex items-center justify-center h-[25px] w-[25px] rounded-full border border-gray-800'>
                             <i aria-hidden={true} className="fa-solid fa-user text-xs"></i>
                         </button>
-                        <button>
+                        <button onClick={() => setOpenCart(!openCart)} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
+                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${cartItems.length > 0 ? ' flex' : 'hidden'}`}>{cartItems.length}</span>
                         </button>
                         <button>
                             <i aria-hidden={true} className="fa-solid fa-heart"></i>
@@ -165,6 +171,7 @@ const Header = () => {
             <Modal isOpen={isOpen} onRequestClose={closeModal} className='h-full w-full flex justify-center items-center'>
                 <Login closeModal={closeModal} />
             </Modal>
+            {openCart && <DisplayCart />}
         </>
     )
 }

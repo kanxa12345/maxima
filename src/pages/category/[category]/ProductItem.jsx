@@ -1,9 +1,17 @@
+import { add } from '@/redux/Cartslice';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const ProductItem = ({ category, subCategory, dataItem }) => {
     const router = useRouter();
+    const dispatch = useDispatch();
+     
+    const HandleAdd = (product) => {
+        dispatch(add(product))
+    }
+
     return (
         <div className='flex flex-col items-start gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm relative overflow-hidden'>
             <div className='overflow-hidden'>
@@ -16,7 +24,7 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
                 <button className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
                     <i aria-hidden={true} className="fa-solid fa-heart"></i>
                 </button>
-                <button className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => HandleAdd(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
                     <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
                 </button>
             </div>
@@ -32,6 +40,7 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
             </div>
         </div>
     )
-}
+};
+
 
 export default ProductItem;
