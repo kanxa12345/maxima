@@ -2,10 +2,13 @@ import ProductData from '@/data/ProductData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Modal from 'react-modal';
 import React, { useEffect, useState } from 'react';
+import Login from './Login';
 
 const Header = () => {
     const router = useRouter()
+    const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [categoryMenus, setCategoryMenus] = useState({});
     const [subcategoryMenus, setSubcategoryMenus] = useState({});
@@ -56,6 +59,15 @@ const Header = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const openModal = () => {
+        setIsOpen(true);
+        document.body.classList.add('overflow-hidden')
+    }
+    const closeModal = () => {
+        setIsOpen(false);
+        document.body.classList.remove('overflow-hidden')
+    }
     return (
         <>
             <header className={`sticky top-0 z-40 bg-white ${scrolled ? 'shadow-[0_0_10px_2px_rgba(0,0,0,0.2)]' : ''}`}>
@@ -68,7 +80,7 @@ const Header = () => {
                         <i aria-hidden={true} className="fa-solid fa-magnifying-glass absolute right-2 top-1/2 -translate-y-1/2"></i>
                     </div>
                     <div className='flex items-center gap-6'>
-                        <button className='flex items-center justify-center h-[25px] w-[25px] rounded-full border border-gray-800'>
+                        <button onClick={openModal} className='flex items-center justify-center h-[25px] w-[25px] rounded-full border border-gray-800'>
                             <i aria-hidden={true} className="fa-solid fa-user text-xs"></i>
                         </button>
                         <button>
@@ -150,6 +162,9 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
+            <Modal isOpen={isOpen} onRequestClose={closeModal} className='h-full w-full flex justify-center items-center'>
+                <Login closeModal={closeModal} />
+            </Modal>
         </>
     )
 }
