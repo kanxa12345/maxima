@@ -20,13 +20,13 @@ const ProductCat = () => {
     });
 
     return (
-        <section className='py-20'>
+        <section className='py-20 bg-gray-200 bg-opacity-80'>
             {Object.values(groupedData).length > 0 && (
                 <div className="container flex flex-col items-start gap-2">
                     <h2 className='text-2xl font-medium'>Categories</h2>
                     <div className="w-full grid grid-cols-5 gap-4">
                         {Object.values(groupedData).map((dataItem, index) => (
-                            <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm'>
+                            <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm bg-white'>
                                 <button onClick={() => router.push(`/category/${dataItem.title}`)} className='overflow-hidden'>
                                     <Image src={dataItem.thumbnailImage} priority={true} height={200} width={200} className='w-full h-[250px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' alt={dataItem.title} />
                                 </button>

@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import Login from './Login';
 import { useSelector } from 'react-redux';
 import DisplayCart from './DisplayCart';
+import Wishlist from './Wishlist';
 
 const Header = () => {
     const router = useRouter()
@@ -71,8 +72,47 @@ const Header = () => {
         document.body.classList.remove('overflow-hidden')
     }
 
+    //for product search
+    const [text, setText] = useState('');
+    const handleInputChange = (e) => {
+        setText(e.target.value);
+    }
+
+    const handleSearch = () => {
+        if (text.trim() === '') {
+            return; // Do nothing if the search text is empty
+        }
+
+        // Check if the search text matches a category, subcategory, or product
+        const matchedCategory = Object.values(groupedData).find(category => category.category.toLowerCase().includes(text.toLowerCase()));
+        if (matchedCategory) {
+            router.push(`/category/${matchedCategory.category}`);
+            return;
+        }
+
+        for (const categoryItem of Object.values(groupedData)) {
+            const matchedSubcategory = Object.values(categoryItem.subcategories).find(subcategory => subcategory.subCategory.toLowerCase().includes(text.toLowerCase()));
+            if (matchedSubcategory) {
+                router.push(`/category/${categoryItem.category}/${matchedSubcategory.subCategory}`);
+                return;
+            }
+
+            for (const subCategoryItem of Object.values(categoryItem.subcategories)) {
+                const matchedProduct = subCategoryItem.products.find(product => product.product.toLowerCase().includes(text.toLowerCase()));
+                if (matchedProduct) {
+                    router.push(`/category/${categoryItem.category}/${subCategoryItem.subCategory}/${matchedProduct.product}`);
+                    return;
+                }
+            }
+        }
+        alert('No matching category, subcategory, or product found.');
+
+    }
+
+
     const cartItems = useSelector(state => state.cart)
     const [openCart, setOpenCart] = useState(false)
+    const [openWishlist, setOpenWishlist] = useState(false)
     return (
         <>
             <header className={`sticky top-0 z-40 bg-white ${scrolled ? 'shadow-[0_0_10px_2px_rgba(0,0,0,0.2)]' : ''}`}>
@@ -81,18 +121,20 @@ const Header = () => {
                         <Image src="/images/logo.png" width={200} height={100} alt='logo' priority={true} className='w-[150px]' />
                     </Link>
                     <div className='w-1/3 relative'>
-                        <input type="text" placeholder='search product here...' className='border border-gray-400 p-2 rounded-lg w-full focus:outline-none' />
-                        <i aria-hidden={true} className="fa-solid fa-magnifying-glass absolute right-2 top-1/2 -translate-y-1/2"></i>
+                        <input type="text" placeholder='search product here...' value={text} onChange={handleInputChange} className='border border-gray-400 p-2 rounded-lg w-full focus:outline-none' />
+                        <button onClick={handleSearch} className='w-[25px] h-[25px] rounded-full flex items-center justify-center bg-gray-200 absolute right-2 top-1/2 -translate-y-1/2 hover:bg-gray-300 transition-all duration-150 ease-linear'>
+                            <i aria-hidden={true} className="fa-solid fa-magnifying-glass text-sm"></i>
+                        </button>
                     </div>
                     <div className='flex items-center gap-6'>
                         <button onClick={openModal} className='flex items-center justify-center h-[25px] w-[25px] rounded-full border border-gray-800'>
                             <i aria-hidden={true} className="fa-solid fa-user text-xs"></i>
                         </button>
-                        <button onClick={() => setOpenCart(!openCart)} className='relative'>
+                        <button onClick={() => { setOpenCart(!openCart), setOpenWishlist(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
                             <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${cartItems.length > 0 ? ' flex' : 'hidden'}`}>{cartItems.length}</span>
                         </button>
-                        <button>
+                        <button onClick={() => { setOpenWishlist(!openWishlist), setOpenCart(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-heart"></i>
                         </button>
                     </div>
@@ -157,13 +199,6 @@ const Header = () => {
                         )}
                     </div>
                     <div>
-                        <ul className='flex items-center gap-4'>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/aboutus">About</Link></li>
-                            <li><Link href="/contactus">Contact Us</Link></li>
-                        </ul>
-                    </div>
-                    <div>
                         <button className='flex items-center gap-2 text-lg font-medium'><i aria-hidden={true} className="fa-solid fa-truck-fast text-base"></i>Track your order</button>
                     </div>
                 </div>
@@ -172,6 +207,7 @@ const Header = () => {
                 <Login closeModal={closeModal} />
             </Modal>
             {openCart && <DisplayCart />}
+            {openWishlist && <Wishlist />}
         </>
     )
 }

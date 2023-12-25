@@ -8,7 +8,10 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
     const router = useRouter();
     const dispatch = useDispatch();
      
-    const HandleAdd = (product) => {
+    const HandleAddCart = (product) => {
+        dispatch(add(product))
+    }
+    const HandleAddWishlist = (product) => {
         dispatch(add(product))
     }
 
@@ -21,10 +24,10 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
                 <button onClick={() => router.push(`/category/${category}/${subCategory}/${dataItem.product}`)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
                     <i aria-hidden={true} className="fa-solid fa-eye"></i>
                 </button>
-                <button className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => HandleAddWishlist(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
                     <i aria-hidden={true} className="fa-solid fa-heart"></i>
                 </button>
-                <button onClick={() => HandleAdd(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => HandleAddCart(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
                     <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
                 </button>
             </div>

@@ -1,14 +1,13 @@
-import React from 'react';
-// import { remove } from '@/redux/Cartslice';
-import { useDispatch, useSelector } from 'react-redux';
-import Image from 'next/image';
+import Image from 'next/image'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-const DisplayCart = () => {
+const Wishlist = () => {
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.cart)
     return (
         <div className="fixed right-0 top-[69px] bg-white h-full border px-4 pt-8 pb-[130px] w-1/4 overflow-y-auto flex flex-col items-start gap-2 z-[100]">
-            <h2 className='text-2xl font-medium'>Your cart</h2>
+            <h2 className='text-2xl font-medium'>Your wishlist</h2>
             <div className='w-full border p-4 flex flex-col items-start gap-2'>
                 {cartItems.length > 0 ? cartItems.map((dataItem, index) => (
                     <div key={index} className='flex gap-4 w-full'>
@@ -29,4 +28,4 @@ const DisplayCart = () => {
     )
 }
 
-export default DisplayCart;
+export default Wishlist;
