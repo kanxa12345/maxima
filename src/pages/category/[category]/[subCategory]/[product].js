@@ -4,12 +4,23 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react'
 import ProductItem from '../ProductItem';
+import { addCart, addWishlist } from '@/redux/Cartslice';
+import { useDispatch } from 'react-redux';
 
 const product = () => {
     const router = useRouter();
     const { category, subCategory, product } = router.query;
     const data = ProductData.find(item => item.category === category && item.subCategory === subCategory && item.product === product)
     const otherProducts = ProductData.filter(item => item.category === category && item.subCategory === subCategory && item.product !== product)
+
+    const dispatch = useDispatch()
+    const HandleAddCart = (product) => {
+        dispatch(addCart(product))
+    }
+    const HandleAddWishlist = (product) => {
+        dispatch(addWishlist(product))
+    }
+
     return (
         <>
             <section className='h-[150px] relative'>
@@ -51,8 +62,8 @@ const product = () => {
                                 </span>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <button className='p-2 border rounded text-sm font-medium bg-brandColor text-white'>Add to wishlist</button>
-                                <button className='p-2 border rounded text-sm font-medium bg-secondColor text-white'>Add to cart</button>
+                                <button onClick={()=> HandleAddWishlist(data)} className='p-2 border rounded text-sm font-medium bg-brandColor text-white'>Add to wishlist</button>
+                                <button onClick={()=> HandleAddCart(data)} className='p-2 border rounded text-sm font-medium bg-secondColor text-white'>Add to cart</button>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import { add } from '@/redux/Cartslice';
+import { addCart, addWishlist } from '@/redux/Cartslice';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -9,10 +9,10 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
     const dispatch = useDispatch();
      
     const HandleAddCart = (product) => {
-        dispatch(add(product))
+        dispatch(addCart(product))
     }
     const HandleAddWishlist = (product) => {
-        dispatch(add(product))
+        dispatch(addWishlist(product))
     }
 
     return (

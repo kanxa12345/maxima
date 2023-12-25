@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { add, remove } from '@/redux/Cartslice';
+import {  addCart, removeCart } from '@/redux/Cartslice';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
@@ -26,15 +26,15 @@ const DisplayCart = () => {
     }, [cartItems]);
 
     const handleAdd = (item) => {
-        dispatch(add(item));
+        dispatch(addCart(item));
     };
 
     const handleDelete = (id) => {
-        dispatch(remove(id));
+        dispatch(removeCart(id));
     };
 
     return (
-        <div className="fixed right-0 top-[69px] bg-white h-full border px-4 pt-8 pb-[130px] w-1/4 overflow-y-auto flex flex-col items-start gap-2 z-[100]">
+        <div className="fixed right-0 top-[69px] bg-white h-full border px-4 pt-8 pb-[130px] w-1/4 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
             <h2 className='text-2xl font-medium'>Your cart</h2>
             <div className='w-full border p-4 flex flex-col items-start gap-10 overflow-y-auto'>
                 {groupedArray.length > 0 ? groupedArray.map((dataItem, index) => (
@@ -52,11 +52,14 @@ const DisplayCart = () => {
                     </div>
                 )) :
                     <div>
-                        <h3 className='text-4xl font-semibold'>Your cart is empty</h3>
+                        <h3 className='text-3xl font-semibold'>Your cart is empty</h3>
                     </div>
                 }
             </div>
-            <p className='text-xl font-semibold text-gray-600'>Total price: Rs.{totalPrice} </p>
+            <div className='w-full flex gap-2 items-center justify-between'>
+                <p className='text-xl font-semibold text-gray-600'>Total price: Rs.{totalPrice} </p>
+                <button className='py-1 px-2 bg-secondColor text-white rounded'>Checkout</button>
+            </div>
         </div>
     )
 }
