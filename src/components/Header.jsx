@@ -100,7 +100,7 @@ const Header = () => {
             for (const subCategoryItem of Object.values(categoryItem.subcategories)) {
                 const matchedProduct = subCategoryItem.products.find(product => product.product.toLowerCase().includes(text.toLowerCase()));
                 if (matchedProduct) {
-                    router.push(`/category/${categoryItem.category}/${subCategoryItem.subCategory}/${matchedProduct.product}`);
+                    router.push(`/category/${categoryItem.category}/${subCategoryItem.subCategory}`);
                     return;
                 }
             }
@@ -108,9 +108,23 @@ const Header = () => {
         alert('No matching category, subcategory, or product found.');
 
     }
+    const handleKeyPress = (e) => {
+        if (e.key.toLowerCase() === 'enter') {
+            e.preventDefault();
+            handleSearch();
+        }
+    }
 
 
     const cartItems = useSelector(state => state.cart)
+    const filteredItems = cartItems.reduce((result, item) => {
+        const { product } = item;
+        if (!result[product]) {
+            result[product] = [];
+        }
+        result[product].push(item);
+        return result;
+    }, {});
     const [openCart, setOpenCart] = useState(false)
     const [openWishlist, setOpenWishlist] = useState(false)
     return (
@@ -121,7 +135,7 @@ const Header = () => {
                         <Image src="/images/logo.png" width={200} height={100} alt='logo' priority={true} className='w-[150px]' />
                     </Link>
                     <div className='w-1/3 relative'>
-                        <input type="text" placeholder='search product here...' value={text} onChange={handleInputChange} className='border border-gray-400 p-2 rounded-lg w-full focus:outline-none' />
+                        <input type="search" placeholder='search product here...' value={text} onChange={handleInputChange} onKeyDown={handleKeyPress} className='border border-gray-400 p-2 rounded-lg w-full focus:outline-none' />
                         <button onClick={handleSearch} className='w-[25px] h-[25px] rounded-full flex items-center justify-center bg-gray-200 absolute right-2 top-1/2 -translate-y-1/2 hover:bg-gray-300 transition-all duration-150 ease-linear'>
                             <i aria-hidden={true} className="fa-solid fa-magnifying-glass text-sm"></i>
                         </button>
@@ -132,10 +146,11 @@ const Header = () => {
                         </button>
                         <button onClick={() => { setOpenCart(!openCart), setOpenWishlist(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
-                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${cartItems.length > 0 ? ' flex' : 'hidden'}`}>{cartItems.length}</span>
+                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${Object.values(filteredItems).length > 0 ? ' flex' : 'hidden'}`}>{Object.values(filteredItems).length}</span>
                         </button>
                         <button onClick={() => { setOpenWishlist(!openWishlist), setOpenCart(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-heart"></i>
+                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${cartItems.length > 0 ? ' flex' : 'hidden'}`}>{cartItems.length}</span>
                         </button>
                     </div>
                 </div>
