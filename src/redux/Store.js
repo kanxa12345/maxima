@@ -9,13 +9,6 @@ const persistConfig = {
     storage,
 }
 
-
-// const store = configureStore({
-//     reducer: {
-//         cart: cartReducer,
-//         wishlist: wishlistReducer,
-//     }
-// })
 const reducer = combineReducers({
     cart: cartReducer,
     wishlist: wishlistReducer,

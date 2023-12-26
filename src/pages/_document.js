@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="shortcut icon" href="/images/favicon_io/favicon-16x16.png" type="image/png" size="16x16" />
         <link rel="shortcut icon" href="/images/favicon_io/favicon-32x32.png" type="image/png" size="32x32" />
-        {/* <title>Maxima Multinational Trading Pvt. Ltd.</title> */}
+        <title>Maxima Multinational Trading Pvt. Ltd.</title>
       </Head>
       <body>
         <Main />

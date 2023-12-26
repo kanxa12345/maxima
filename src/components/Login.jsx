@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react';
 
 const Login = ({ closeModal }) => {
     const [activeBox, setActiveBox] = useState(0)
-    const [showPassword, setShowPassword] = useState(false);
+    const [showLoginPassword, setShowLoginPassword] = useState(false);
+    const [showSignupPassword, setShowSignupPassword] = useState(false);
+    const [showReSignupPassword, setShowReSignupPassword] = useState(false);
 
     //for login
     const initialLoginForm = {
@@ -37,15 +39,18 @@ const Login = ({ closeModal }) => {
     const [signUpForm, setSignUpForm] = useState(initialSignUpForm)
     const handleSignUpInput = (e) => {
         const { name, value } = e.target;
-        setLoginForm({ ...loginForm, [name]: value });
+        setSignUpForm({ ...signUpForm, [name]: value });
     };
     const handleSignUpSubmit = (e) => {
         e.preventDefault();
-        console.log(signUpForm);
-        alert("Form submitted successfully!")
-
-        // Reset the form to its initial state
-        setSignUpForm(initialSignUpForm);
+        if (signUpForm.password === signUpForm.rePassword) {
+            console.log(signUpForm);
+            alert("Form submitted successfully!")
+            setSignUpForm(initialSignUpForm);
+        }
+        else{
+            alert('You re-enter the wrong password')
+        }
     };
 
     const handleActiveBox = (index) => {
@@ -63,13 +68,13 @@ const Login = ({ closeModal }) => {
                     <h2 className='lg:text-2xl text-xl font-medium sm:mb-4 mb-1 text-center'>Login to maxima</h2>
                     <form onSubmit={handleLoginSubmit} className='flex w-full flex-col justify-between items-center gap-4 mb-3'>
                         <div className='w-full'>
-                            <input type="text" id="username" name="username" placeholder='Email or phone number' value={loginForm.loginUsername} onChange={handleLoginInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
+                            <input type="text" id="loginUsername" name="loginUsername" placeholder='Email or phone number' value={loginForm.loginUsername} onChange={handleLoginInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
                         </div>
                         <div className='w-full relative'>
-                            <input type={`${showPassword ? 'text' : 'password'}`} id="password" name="password" placeholder='Password' value={loginForm.loginPassword} onChange={handleLoginInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
-                            <span onClick={() => setShowPassword(!showPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
-                                <i className={`fa-solid fa-eye${showPassword ? '' : '-slash'}`}></i>
-                            </span>
+                            <input type={`${showLoginPassword ? 'text' : 'password'}`} id="loginPassword" name="loginPassword" placeholder='Password' value={loginForm.loginPassword} onChange={handleLoginInput} required className={`focus:outline-none w-full p-2 border border-gray-400 rounded placeholder:text-base placeholder:font-normal ${!showLoginPassword ? 'text-xl font-bold py-[6px]' : ''}`} />
+                            {loginForm.loginPassword.length > 0 && <span onClick={() => setShowLoginPassword(!showLoginPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
+                                <i className={`fa-solid fa-eye${showLoginPassword ? '' : '-slash'}`}></i>
+                            </span>}
                         </div>
                         <button type="submit" className='text-white bg-brandColor py-2 px-3 rounded-md'>Login</button>
                         <a href="#" className='flex text-sm text-brandColor hover:underline'>Forgot password ?</a>
@@ -82,22 +87,22 @@ const Login = ({ closeModal }) => {
                     <h2 className='lg:text-2xl text-xl font-medium sm:mb-4 mb-1 text-center'>Signup to maxima</h2>
                     <form onSubmit={handleSignUpSubmit} className='flex w-full flex-col justify-between items-center gap-4 mb-3'>
                         <div className='w-full'>
-                            <input type="text" id="name" name="name" placeholder='Your full name' value={signUpForm.fullName} onChange={handleSignUpInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
+                            <input type="text" id="fullName" name="fullName" placeholder='Your full name' value={signUpForm.fullName} onChange={handleSignUpInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
                         </div>
                         <div className='w-full'>
                             <input type="text" id="username" name="username" placeholder='Email or phone number' value={signUpForm.username} onChange={handleSignUpInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
                         </div>
                         <div className='w-full relative'>
-                            <input type={`${showPassword ? 'text' : 'password'}`} id="password" name="password" placeholder='Create Password' value={signUpForm.password} onChange={handleSignUpInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
-                            <span onClick={() => setShowPassword(!showPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
-                                <i className={`fa-solid fa-eye${showPassword ? '' : '-slash'}`}></i>
-                            </span>
+                            <input type={`${showSignupPassword ? 'text' : 'password'}`} id="password" minlength="8" name="password" placeholder='Create Password' value={signUpForm.password} onChange={handleSignUpInput} required className={`focus:outline-none w-full p-2 border border-gray-400 rounded placeholder:text-base placeholder:font-normal ${!showSignupPassword ? 'text-xl font-bold py-[6px]' : ''}`} />
+                            {signUpForm.password.length > 0 && <span onClick={() => setShowSignupPassword(!showSignupPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
+                                <i className={`fa-solid fa-eye${showSignupPassword ? '' : '-slash'}`}></i>
+                            </span>}
                         </div>
                         <div className='w-full relative'>
-                            <input type={`${showPassword ? 'text' : 'password'}`} id="rePassword" name="rePassword" placeholder='Re-enter Password' value={signUpForm.rePassword} onChange={handleSignUpInput} required className='focus:outline-none w-full p-2 border border-gray-400 rounded' />
-                            <span onClick={() => setShowPassword(!showPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
-                                <i className={`fa-solid fa-eye${showPassword ? '' : '-slash'}`}></i>
-                            </span>
+                            <input type={`${showReSignupPassword ? 'text' : 'password'}`} id="rePassword" name="rePassword" placeholder='Re-enter Password' value={signUpForm.rePassword} onChange={handleSignUpInput} required className={`focus:outline-none w-full p-2 border border-gray-400 rounded placeholder:text-base placeholder:font-normal ${!showReSignupPassword ? 'text-xl font-bold py-[6px]' : ''}`} />
+                            {signUpForm.rePassword.length > 0 && <span onClick={() => setShowReSignupPassword(!showReSignupPassword)} className='flex justify-center items-center cursor-pointer w-[20px] h-[20px] rounded-full bg-gray-200 text-xs absolute top-1/2 -translate-y-1/2 right-2'>
+                                <i className={`fa-solid fa-eye${showReSignupPassword ? '' : '-slash'}`}></i>
+                            </span>}
                         </div>
                         <button type="submit" className='text-white bg-brandColor py-2 px-3 rounded-md'>Sign Up</button>
                     </form>

@@ -22,13 +22,13 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
                 <Image src={dataItem.imageUrl} priority={true} height={200} width={200} className='w-full h-[200px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' alt={dataItem.product} />
             </div>
             <div className='flex flex-col items-start gap-[2px] absolute top-28 -right-10 opacity-0 group-hover:right-3 group-hover:opacity-100 transition-all duration-200 ease-linear'>
-                <button onClick={() => router.push(`/category/${category}/${subCategory}/${dataItem.product}`)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => router.push(`/category/${category}/${subCategory}/${dataItem.product}`)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-yellow-300 text-white'>
                     <i aria-hidden={true} className="fa-solid fa-eye"></i>
                 </button>
-                <button onClick={() => HandleAddWishlist(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => HandleAddWishlist(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-red-600 text-white'>
                     <i aria-hidden={true} className="fa-solid fa-heart"></i>
                 </button>
-                <button onClick={() => HandleAddCart(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-white'>
+                <button onClick={() => HandleAddCart(dataItem)} className='text-sm flex justify-center items-center h-[25px] w-[25px] border bg-brandColor text-white'>
                     <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
                 </button>
             </div>
