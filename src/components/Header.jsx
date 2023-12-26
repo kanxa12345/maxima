@@ -117,7 +117,16 @@ const Header = () => {
 
 
     const cartItems = useSelector(state => state.cart)
-    const filteredItems = cartItems.reduce((result, item) => {
+    const filteredCartItems = cartItems.reduce((result, item) => {
+        const { product } = item;
+        if (!result[product]) {
+            result[product] = [];
+        }
+        result[product].push(item);
+        return result;
+    }, {});
+    const wishlistItems = useSelector(state => state.wishlist)
+    const filteredWishlistItems = wishlistItems.reduce((result, item) => {
         const { product } = item;
         if (!result[product]) {
             result[product] = [];
@@ -146,11 +155,11 @@ const Header = () => {
                         </button>
                         <button onClick={() => { setOpenCart(!openCart), setOpenWishlist(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
-                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${Object.values(filteredItems).length > 0 ? ' flex' : 'hidden'}`}>{Object.values(filteredItems).length}</span>
+                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${Object.values(filteredCartItems).length > 0 ? ' flex' : 'hidden'}`}>{Object.values(filteredCartItems).length}</span>
                         </button>
                         <button onClick={() => { setOpenWishlist(!openWishlist), setOpenCart(false) }} className='relative'>
                             <i aria-hidden={true} className="fa-solid fa-heart"></i>
-                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${cartItems.length > 0 ? ' flex' : 'hidden'}`}>{cartItems.length}</span>
+                            <span className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${Object.values(filteredWishlistItems).length > 0 ? ' flex' : 'hidden'}`}>{Object.values(filteredWishlistItems).length}</span>
                         </button>
                     </div>
                 </div>

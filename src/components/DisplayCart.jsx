@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {  addCart, removeCart } from '@/redux/Cartslice';
+import { addToCart, decreaseCart, removeFromCart } from '@/redux/Cartslice';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
@@ -26,11 +26,17 @@ const DisplayCart = () => {
     }, [cartItems]);
 
     const handleAdd = (item) => {
-        dispatch(addCart(item));
+        dispatch(addToCart(item));
     };
 
-    const handleDelete = (id) => {
-        dispatch(removeCart(id));
+    const handleDecrease = (item) => {
+        dispatch(decreaseCart(item));
+    };
+    const handleRemove = (item) => {
+        const confirmRemove = confirm("Do you want to remove item from cart list")
+        if (confirmRemove) {
+            dispatch(removeFromCart(item));
+        }
     };
 
     return (
@@ -43,11 +49,15 @@ const DisplayCart = () => {
                         <div className='flex flex-col items-start gap-1'>
                             <p className='text-lg font-medium'>{dataItem.product}</p>
                             <small className='text-base font-medium text-gray-600'>Price: Rs.{dataItem.products.length * parseInt(dataItem.products[0].newPrice)}</small>
-                            <div className='flex items-center gap-2 text-lg'>
-                                <button onClick={() => handleAdd(dataItem.products[0])} className="flex justify-center items-center w-[20px] h-[20px] bg-gray-600 text-sm rounded-full cursor-pointer text-white"><i aria-hidden={true} className="fa-solid fa-plus"></i></button>
-                                <p>{dataItem.products.length}</p>
-                                <button onClick={() => handleDelete(dataItem.products[0].id)} className="text-sm cursor-pointer flex justify-center items-center w-[20px] h-[20px] bg-gray-600 rounded-full text-white"><i aria-hidden={true} className="fa-solid fa-minus"></i></button>
+                            <div className='flex items-center gap-2'>
+                                <p>Quantity:</p>
+                                <div className='flex items-center gap-2'>
+                                    <button onClick={() => handleDecrease(dataItem.products[0])} className="text-sm cursor-pointer flex justify-center items-center w-[20px] h-[20px] bg-gray-600 rounded-full text-white"><i aria-hidden={true} className="fa-solid fa-minus"></i></button>
+                                    <p>{dataItem.products.length}</p>
+                                    <button onClick={() => handleAdd(dataItem.products[0])} className="flex justify-center items-center w-[20px] h-[20px] bg-gray-600 text-sm rounded-full cursor-pointer text-white"><i aria-hidden={true} className="fa-solid fa-plus"></i></button>
+                                </div>
                             </div>
+                            <button onClick={() => handleRemove(dataItem.products[0])} className='text-xs px-2 py-1 bg-brandColor text-white rounded'>Remove</button>
                         </div>
                     </div>
                 )) :

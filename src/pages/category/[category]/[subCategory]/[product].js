@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react'
 import ProductItem from '../ProductItem';
-import { addCart, addWishlist } from '@/redux/Cartslice';
 import { useDispatch } from 'react-redux';
+import { addToCart } from '@/redux/Cartslice';
+import { addToWishlist } from '@/redux/Wishlistslice';
 
 const product = () => {
     const router = useRouter();
@@ -15,10 +16,10 @@ const product = () => {
 
     const dispatch = useDispatch()
     const HandleAddCart = (product) => {
-        dispatch(addCart(product))
+        dispatch(addToCart(product))
     }
     const HandleAddWishlist = (product) => {
-        dispatch(addWishlist(product))
+        dispatch(addToWishlist(product))
     }
 
     return (
