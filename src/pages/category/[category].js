@@ -36,10 +36,10 @@ const category = () => {
           </ul>
         </div>
       </section>
-      <section className='py-20'>
+      <section className='md:py-20 py-16'>
         <div className="container flex flex-col items-center gap-4">
-          <h2 className='text-2xl font-medium'>{category}</h2>
-          <div className="w-full grid grid-cols-5 gap-4">
+          <h2 className='md:text-2xl text-xl font-medium'>{category}</h2>
+          <div className="w-full grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
             {Object.values(groupedData).map((dataItem, index) => (
               <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm'>
                 <button onClick={() => router.push(`/category/${category}/${dataItem.title}`)} className='overflow-hidden'>

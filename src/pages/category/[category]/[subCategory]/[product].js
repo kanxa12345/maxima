@@ -43,17 +43,17 @@ const product = () => {
                     </ul>
                 </div>
             </section>
-            <section className='py-20'>
+            <section className='md:py-20 py-16'>
                 {data && (
-                    <div className="container flex gap-8">
-                        <div className='w-1/3'>
-                            <Image src={data.imageUrl} priority={true} width={200} height={200} alt={data.product} className='w-full h-[350px] object-cover' />
+                    <div className="container flex lg:flex-row flex-col gap-8">
+                        <div className='lg:w-1/3 w-full'>
+                            <Image src={data.imageUrl} priority={true} width={200} height={200} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
                         </div>
-                        <div className='flex flex-col items-start gap-2 w-2/3'>
+                        <div className='flex flex-col items-start gap-2 lg:w-2/3 w-full'>
                             <small className='text-base font-semibold text-gray-500'>{category}</small>
                             <h1 className='text-4xl font-bold'>{product}</h1>
-                            <p className='text-gray-950'>{data.description}</p>
-                            <p className='text-lg font-medium'>Available quantity: {data.availableQuantity}</p>
+                            <p className='text-gray-950 sm:text-base text-sm'>{data.description}</p>
+                            <p className='text-lg font-medium'>Availability: {data.availability}</p>
                             <div className='flex items-center gap-1 text-lg font-medium'>
                                 Price:
                                 <span className='flex items-center gap-4'>

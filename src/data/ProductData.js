@@ -7,7 +7,7 @@ export default [
         imageUrl: '/images/product-images/laptop1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -18,7 +18,7 @@ export default [
         imageUrl: '/images/product-images/mobile1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -29,7 +29,7 @@ export default [
         imageUrl: '/images/product-images/audio1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -40,7 +40,7 @@ export default [
         imageUrl: '/images/product-images/storage1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -51,7 +51,7 @@ export default [
         imageUrl: '/images/product-images/wearable1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -62,7 +62,7 @@ export default [
         imageUrl: '/images/product-images/camera1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
     {
@@ -73,7 +73,7 @@ export default [
         imageUrl: '/images/product-images/network1.webp',
         oldPrice: '5000',
         newPrice: '2000',
-        availableQuantity: '20',
+        availability: 'In Stock',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.'
     },
 ]

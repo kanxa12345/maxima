@@ -25,7 +25,7 @@ const index = () => {
     return (
         <>
             <section className='h-[150px] relative'>
-                <Image src="/images/banner-image/img1.avif" priority={true}  height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
+                <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
                 <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
                 <div className="container flex justify-center items-center h-full relative text-white">
                     <ul className='flex items-center gap-1 md:text-lg font-medium'>
@@ -35,12 +35,12 @@ const index = () => {
                     </ul>
                 </div>
             </section>
-            <section className='py-20'>
-                <div className="container text-2xl font-medium flex flex-col items-center gap-4">
-                    <h2 className='text-2xl font-medium'>Get In Touch</h2>
-                    <div className='w-[80%] flex items-start gap-10'>
-                        <div className='flex flex-col items-start gap-4 px-5 py-6 shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] rounded-md w-1/2 bg-gray-100'>
-                            <h3 className='text-xl font-medium'>Send Feedback</h3>
+            <section className='md:py-20 py-16'>
+                <div className="container font-medium flex flex-col items-center gap-4">
+                    <h2 className='md:text-2xl text-xl font-medium'>Get In Touch</h2>
+                    <div className='xl:w-[80%] w-full flex lg:flex-row flex-col items-start gap-10'>
+                        <div className='flex flex-col items-start gap-4 px-5 py-6 shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] rounded-md lg:w-1/2 w-full bg-gray-100'>
+                            <h3 className='md:text-xl text-lg font-medium'>Send Feedback</h3>
                             <form onSubmit={handleSubmit} className='flex flex-col items-center gap-2 w-full sm:text-base text-sm'>
                                 <div className='flex sm:flex-row flex-col sm:gap-5 gap-2 w-full'>
                                     <div className='flex flex-col items-start sm:w-1/2 w-full'>
@@ -66,23 +66,23 @@ const index = () => {
                                     <label htmlFor="message">Message</label>
                                     <textarea type="text" id='message' name='message' rows="5" value={form.message} onChange={handleInputChange} className='border border-gray-500 p-1 rounded w-full text-gray-600 focus:outline-none' />
                                 </div>
-                                <input type="submit" value="SUBMIT" className='font-medium text-white bg-black px-3 py-2 rounded cursor-pointer' />
+                                <input type="submit" value="SUBMIT" className='font-medium text-white bg-secondColor px-2 py-1 rounded cursor-pointer' />
                             </form>
                         </div>
-                        <div className='w-1/2 relative h-auto border-1'>
-                            <iframe className='w-full h-[430px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.0127797679693!2d85.34188247607288!3d27.747751823707112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194df9aa4eff%3A0xaf4b9c99b44bebb5!2sCaldron%20Graphics%20Nepal%2C%20Apex%20Nepal%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1702878534547!5m2!1sen!2snp" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            <div className='absolute bg-white border border-gray-300 w-2/3 bottom-2 right-2 p-4 flex flex-col items-start gap-3'>
+                        <div className='lg:w-1/2 w-full relative h-auto border-1'>
+                            <iframe className='w-full sm:h-[430px] h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.0127797679693!2d85.34188247607288!3d27.747751823707112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194df9aa4eff%3A0xaf4b9c99b44bebb5!2sCaldron%20Graphics%20Nepal%2C%20Apex%20Nepal%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1702878534547!5m2!1sen!2snp" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                            <div className='absolute bg-white border border-gray-300 sm:w-2/3 w-full bottom-2 sm:right-2 right-0 p-4 flex flex-col items-start gap-3'>
                                 <div>
                                     <h4 className='text-lg font-medium'>Location</h4>
-                                    <p className='text-sm font-regular text-gray-500'>Hikvision-Nepal Tower, Bu.Na.Pa-02, Kathmandu</p>
+                                    <p className='sm:text-sm text-xs font-regular text-gray-500'>Hikvision-Nepal Tower, Bu.Na.Pa-02, Kathmandu</p>
                                 </div>
                                 <div>
                                     <h4 className='text-lg font-medium'>Contact</h4>
-                                    <p className='text-sm font-regular text-gray-500'>+977-1-4372908, +977-1-5329988</p>
+                                    <p className='sm:text-sm text-xs font-regular text-gray-500'>+977-1-4372908, +977-1-5329988</p>
                                 </div>
                                 <div>
                                     <h4 className='text-lg font-medium'>Email</h4>
-                                    <p className='text-sm font-regular text-gray-500'>maxima.multinationaltrading@gmail.com</p>
+                                    <p className='sm:text-sm text-xs font-regular text-gray-500'>maxima.multinationaltrading@gmail.com</p>
                                 </div>
                             </div>
                         </div>
