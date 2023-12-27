@@ -117,7 +117,7 @@ const Header = () => {
 
 
     const cartItems = useSelector(state => state.cart)
-    const filteredCartItems = cartItems.reduce((result, item) => {
+    const filteredCartItems = cartItems.length > 0 && cartItems.reduce((result, item) => {
         const { product } = item;
         if (!result[product]) {
             result[product] = [];

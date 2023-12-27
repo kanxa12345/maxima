@@ -8,12 +8,12 @@ import { useDispatch } from 'react-redux';
 const ProductItem = ({ category, subCategory, dataItem }) => {
     const router = useRouter();
     const dispatch = useDispatch();
-     
-    const HandleAddCart = (product) => {
-        dispatch(addToCart(product))
+
+    const HandleAddCart = (item) => {
+        dispatch(addToCart(item))
     }
-    const HandleAddWishlist = (product) => {
-        dispatch(addToWishlist(product))
+    const HandleAddWishlist = (item) => {
+        dispatch(addToWishlist(item))
     }
 
     return (

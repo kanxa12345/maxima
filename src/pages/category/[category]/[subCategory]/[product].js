@@ -15,11 +15,11 @@ const product = () => {
     const otherProducts = ProductData.filter(item => item.category === category && item.subCategory === subCategory && item.product !== product)
 
     const dispatch = useDispatch()
-    const HandleAddCart = (product) => {
-        dispatch(addToCart(product))
+    const HandleAddCart = (item) => {
+        dispatch(addToCart(item))
     }
-    const HandleAddWishlist = (product) => {
-        dispatch(addToWishlist(product))
+    const HandleAddWishlist = (item) => {
+        dispatch(addToWishlist(item))
     }
 
     return (
@@ -53,6 +53,7 @@ const product = () => {
                             <small className='text-base font-semibold text-gray-500'>{category}</small>
                             <h1 className='text-4xl font-bold'>{product}</h1>
                             <p className='text-gray-950'>{data.description}</p>
+                            <p className='text-lg font-medium'>Available quantity: {data.availableQuantity}</p>
                             <div className='flex items-center gap-1 text-lg font-medium'>
                                 Price:
                                 <span className='flex items-center gap-4'>
@@ -63,8 +64,8 @@ const product = () => {
                                 </span>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <button onClick={()=> HandleAddWishlist(data)} className='p-2 border rounded text-sm font-medium bg-brandColor text-white'>Add to wishlist</button>
-                                <button onClick={()=> HandleAddCart(data)} className='p-2 border rounded text-sm font-medium bg-secondColor text-white'>Add to cart</button>
+                                <button onClick={() => HandleAddWishlist(data)} className='p-2 border rounded text-sm font-medium bg-brandColor text-white'>Add to wishlist</button>
+                                <button onClick={() => HandleAddCart(data)} className='p-2 border rounded text-sm font-medium bg-secondColor text-white'>Add to cart</button>
                             </div>
                         </div>
                     </div>

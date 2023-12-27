@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 
 const ProductCat = () => {
     const router = useRouter()
-    const groupedData = {};
 
+
+    const groupedData = {};
     ProductData.forEach((dataItem) => {
         if (!groupedData[dataItem.category]) {
             groupedData[dataItem.category] = {

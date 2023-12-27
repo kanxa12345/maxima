@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store, persistor } from '@/redux/Store';
 
 export default function App({ Component, pageProps }) {
+  // persistor.purge();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
