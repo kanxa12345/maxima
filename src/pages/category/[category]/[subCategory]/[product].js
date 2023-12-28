@@ -24,7 +24,7 @@ const product = () => {
 
     return (
         <>
-            <section className='h-[150px] relative'>
+            <section className='md:h-[150px] h-[100px] relative'>
                 <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
                 <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
                 <div className="container flex justify-center items-center h-full relative text-white">
@@ -45,16 +45,16 @@ const product = () => {
             </section>
             <section className='md:py-20 py-16'>
                 {data && (
-                    <div className="container flex lg:flex-row flex-col gap-8">
-                        <div className='lg:w-1/3 w-full'>
+                    <div className="container flex md:flex-row flex-col gap-8">
+                        <div className='md:w-1/3 w-full'>
                             <Image src={data.imageUrl} priority={true} width={200} height={200} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
                         </div>
-                        <div className='flex flex-col items-start gap-2 lg:w-2/3 w-full'>
+                        <div className='flex flex-col items-start sm:gap-2 gap-1 md:w-2/3 w-full'>
                             <small className='text-base font-semibold text-gray-500'>{category}</small>
-                            <h1 className='text-4xl font-bold'>{product}</h1>
+                            <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold'>{product}</h1>
                             <p className='text-gray-950 sm:text-base text-sm'>{data.description}</p>
-                            <p className='text-lg font-medium'>Availability: {data.availability}</p>
-                            <div className='flex items-center gap-1 text-lg font-medium'>
+                            <p className='sm:text-lg font-medium'>Availability: {data.availability}</p>
+                            <div className='flex items-center gap-1 sm:text-lg font-medium'>
                                 Price:
                                 <span className='flex items-center gap-4'>
                                     <p>Rs.{data.newPrice}</p>
@@ -64,8 +64,8 @@ const product = () => {
                                 </span>
                             </div>
                             <div className='flex items-center gap-4'>
-                                <button onClick={() => HandleAddWishlist(data)} className='p-2 border rounded text-sm font-medium bg-brandColor text-white'>Add to wishlist</button>
-                                <button onClick={() => HandleAddCart(data)} className='p-2 border rounded text-sm font-medium bg-secondColor text-white'>Add to cart</button>
+                                <button onClick={() => HandleAddWishlist(data)} className='sm:p-2 p-1 rounded sm:text-sm text-xs font-medium bg-brandColor text-white'>Add to wishlist</button>
+                                <button onClick={() => HandleAddCart(data)} className='sm:p-2 p-1 rounded sm:text-sm text-xs font-medium bg-secondColor text-white'>Add to cart</button>
                             </div>
                         </div>
                     </div>

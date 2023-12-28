@@ -25,7 +25,7 @@ const Footer = () => {
                 height={200}
                 width={200}
                 alt="logo"
-                className="w-40"
+                className="md:w-40 w-32"
               />
               <div className="flex gap-5">
                 <a
@@ -55,12 +55,24 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex flex-col items-start gap-2">
-              <h3 className="text-xl font-medium">Company</h3>
+              <h3 className="md:text-xl text-lg font-medium">Company</h3>
               <ul>
                 <li>
                   <Link
+                    href="/partners"
+                    className="flex items-center gap-1 hover:gap-2 transition-all duration-150 ease-linear md:text-base text-sm"
+                  >
+                    <i
+                      aria-hidden={true}
+                      className="fa-solid fa-angle-right text-xs"
+                    ></i>
+                    Partners
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/aboutus"
-                    className="flex items-center gap-1 hover:gap-2 transition-all duration-150 ease-linear"
+                    className="flex items-center gap-1 hover:gap-2 transition-all duration-150 ease-linear md:text-base text-sm"
                   >
                     <i
                       aria-hidden={true}
@@ -72,7 +84,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/contactus"
-                    className="flex items-center gap-1 hover:gap-2 transition-all duration-150 ease-linear"
+                    className="flex items-center gap-1 hover:gap-2 transition-all duration-150 ease-linear md:text-base text-sm"
                   >
                     <i
                       aria-hidden={true}
@@ -84,7 +96,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="flex flex-col items-start gap-2">
-              <h3 className="text-xl font-medium">Contact Us</h3>
+              <h3 className="md:text-xl text-lg font-medium">Contact Us</h3>
               <ul className="text-sm flex flex-col items-start gap-1">
                 <li className="group">
                   <a
@@ -136,7 +148,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col items-start gap-3">
               <div className="flex flex-col items-start gap-1 w-full">
-                <h3 className="text-xl font-medium">Subscribe</h3>
+                <h3 className="md:text-xl text-lg font-medium">Subscribe</h3>
                 <form
                   onSubmit={handleSubmit}
                   className="md:w-10/12 sm:w-2/3 w-9/12"
@@ -161,7 +173,7 @@ const Footer = () => {
                 </form>
               </div>
               <div className="flex flex-col items-start gap-1 w-full">
-                <h3 className="text-xl font-medium">We Accept</h3>
+                <h3 className="md:text-xl text-lg font-medium">We Accept</h3>
                 <div className="w-full flex gap-4">
                   <Image
                     src="/images/payment-method/esewa.webp"
@@ -169,7 +181,7 @@ const Footer = () => {
                     height={100}
                     width={100}
                     alt="esewa"
-                    className="w-[70px] h-7 object-cover"
+                    className="md:w-[70px] w-[50px] md:h-7 h-5 object-cover"
                   />
                   <Image
                     src="/images/payment-method/mastercard.webp"
@@ -177,7 +189,7 @@ const Footer = () => {
                     height={100}
                     width={100}
                     alt="mastercard"
-                    className="w-[70px] h-7 object-cover"
+                    className="md:w-[70px] w-[50px] md:h-7 h-5 object-cover"
                   />
                   <Image
                     src="/images/payment-method/khalti.webp"
@@ -185,7 +197,7 @@ const Footer = () => {
                     height={100}
                     width={100}
                     alt="khalti"
-                    className="w-[70px] h-7 object-cover"
+                    className="md:w-[70px] w-[50px] md:h-7 h-5 object-cover"
                   />
                 </div>
               </div>

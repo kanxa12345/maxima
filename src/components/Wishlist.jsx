@@ -31,8 +31,8 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="fixed right-0 top-[69px] bg-white h-full border px-4 pt-8 pb-[130px] w-1/4 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
-      <h2 className="text-2xl font-medium">Your Wishlist</h2>
+    <div className="fixed right-0 lg:top-[69px] sm:top-[59px] top-[45px] bg-white h-full border px-4 pt-8 pb-[130px] 2xl:w-1/4 xl:w-1/3 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
+      <h2 className="md:text-2xl text-xl font-medium">Your Wishlist</h2>
       <div className="w-full border p-4 flex flex-col items-start gap-10 overflow-y-auto">
         {groupedArray.length > 0 ? (
           groupedArray.map((dataItem, index) => (
@@ -43,20 +43,20 @@ const Wishlist = () => {
                 height={150}
                 width={150}
                 alt={dataItem.product}
-                className="w-[150px] h-[100px] object-cover object-center"
+                className="md:w-[150px] w-[100px] md:h-[100px] h-[80px] object-cover object-center"
               />
               <div className="flex flex-col items-start gap-1">
-                <p className="text-lg font-medium">{dataItem.product}</p>
+                <p className="md:text-lg font-medium">{dataItem.product}</p>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => handleRemove(dataItem.products[0])}
-                    className="text-xs px-2 py-1 bg-brandColor text-white rounded"
+                    className="md:text-xs text-[10px] px-2 py-1 bg-brandColor text-white rounded"
                   >
                     Remove
                   </button>
                   <button
                     onClick={() => handleAddCart(dataItem.products[0])}
-                    className="text-xs px-2 py-1 rounded bg-secondColor text-white"
+                    className="md:text-xs text-[10px] px-2 py-1 rounded bg-secondColor text-white"
                   >
                     Add to cart
                   </button>
@@ -66,7 +66,7 @@ const Wishlist = () => {
           ))
         ) : (
           <div>
-            <h3 className="text-3xl font-semibold">Your wishlist is empty</h3>
+            <h3 className="md:text-3xl text-2xl md:font-semibold font-medium">Your wishlist is empty</h3>
           </div>
         )}
       </div>

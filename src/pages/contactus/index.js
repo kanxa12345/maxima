@@ -24,7 +24,7 @@ const index = () => {
     }
     return (
         <>
-            <section className='h-[150px] relative'>
+            <section className='md:h-[150px] h-[100px] relative'>
                 <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
                 <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
                 <div className="container flex justify-center items-center h-full relative text-white">
@@ -73,15 +73,15 @@ const index = () => {
                             <iframe className='w-full sm:h-[430px] h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.0127797679693!2d85.34188247607288!3d27.747751823707112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194df9aa4eff%3A0xaf4b9c99b44bebb5!2sCaldron%20Graphics%20Nepal%2C%20Apex%20Nepal%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1702878534547!5m2!1sen!2snp" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             <div className='absolute bg-white border border-gray-300 sm:w-2/3 w-full bottom-2 sm:right-2 right-0 p-4 flex flex-col items-start gap-3'>
                                 <div>
-                                    <h4 className='text-lg font-medium'>Location</h4>
+                                    <h4 className='md:text-lg font-medium'>Location</h4>
                                     <p className='sm:text-sm text-xs font-regular text-gray-500'>Hikvision-Nepal Tower, Bu.Na.Pa-02, Kathmandu</p>
                                 </div>
                                 <div>
-                                    <h4 className='text-lg font-medium'>Contact</h4>
+                                    <h4 className='md:text-lg font-medium'>Contact</h4>
                                     <p className='sm:text-sm text-xs font-regular text-gray-500'>+977-1-4372908, +977-1-5329988</p>
                                 </div>
                                 <div>
-                                    <h4 className='text-lg font-medium'>Email</h4>
+                                    <h4 className='md:text-lg font-medium'>Email</h4>
                                     <p className='sm:text-sm text-xs font-regular text-gray-500'>maxima.multinationaltrading@gmail.com</p>
                                 </div>
                             </div>

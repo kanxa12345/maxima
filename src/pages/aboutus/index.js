@@ -6,7 +6,7 @@ import React from 'react'
 const index = () => {
   return (
     <>
-      <section className='h-[150px] relative'>
+      <section className='md:h-[150px] h-[100px] relative'>
         <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
         <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
         <div className="container flex justify-center items-center h-full relative text-white">

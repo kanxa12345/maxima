@@ -42,8 +42,8 @@ const DisplayCart = () => {
   };
 
   return (
-    <div className="fixed right-0 top-[69px] bg-white h-full border px-4 pt-8 pb-[130px] w-1/4 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
-      <h2 className="text-2xl font-medium">Your cart</h2>
+    <div className="fixed right-0 lg:top-[69px] sm:top-[59px] top-[45px] bg-white h-full border px-4 pt-8 pb-[130px] 2xl:w-1/4 xl:w-1/3 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
+      <h2 className="md:text-2xl text-xl font-medium">Your cart</h2>
       <div className="w-full border p-4 flex flex-col items-start gap-10 overflow-y-auto">
         {groupedArray.length > 0 ? (
           groupedArray.map((dataItem, index) => (
@@ -54,28 +54,28 @@ const DisplayCart = () => {
                 height={150}
                 width={150}
                 alt={dataItem.product}
-                className="w-[150px] h-[100px] object-cover object-center"
+                className="md:w-[150px] w-[100px] md:h-[100px] h-[80px] object-cover object-center"
               />
               <div className="flex flex-col items-start gap-1">
-                <p className="text-lg font-medium">{dataItem.product}</p>
-                <small className="text-base font-medium text-gray-600">
+                <p className="md:text-lg font-medium">{dataItem.product}</p>
+                <small className="md:text-base text-sm font-medium text-gray-600">
                   Price: Rs.
                   {dataItem.products.length *
                     parseInt(dataItem.products[0].newPrice)}
                 </small>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 md:text-base text-sm">
                   <p>Quantity:</p>
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleDecrease(dataItem.products[0])}
-                      className="text-sm cursor-pointer flex justify-center items-center w-[20px] h-[20px] bg-gray-600 rounded-full text-white"
+                      className="md:text-sm text-[10px] cursor-pointer flex justify-center items-center md:w-[20px] w-[15px] md:h-[20px] h-[15px] bg-gray-600 rounded-full text-white"
                     >
                       <i aria-hidden={true} className="fa-solid fa-minus"></i>
                     </button>
                     <p>{dataItem.products.length}</p>
                     <button
                       onClick={() => handleAdd(dataItem.products[0])}
-                      className="flex justify-center items-center w-[20px] h-[20px] bg-gray-600 text-sm rounded-full cursor-pointer text-white"
+                      className="flex justify-center items-center md:w-[20px] w-[15px] md:h-[20px] h-[15px] bg-gray-600 md:text-sm text-[10px] rounded-full cursor-pointer text-white"
                     >
                       <i aria-hidden={true} className="fa-solid fa-plus"></i>
                     </button>
@@ -83,7 +83,7 @@ const DisplayCart = () => {
                 </div>
                 <button
                   onClick={() => handleRemove(dataItem.products[0])}
-                  className="text-xs px-2 py-1 bg-brandColor text-white rounded"
+                  className="md:text-xs text-[10px] px-2 py-1 bg-brandColor text-white rounded"
                 >
                   Remove
                 </button>
@@ -92,15 +92,15 @@ const DisplayCart = () => {
           ))
         ) : (
           <div>
-            <h3 className="text-3xl font-semibold">Your cart is empty</h3>
+            <h3 className="md:text-3xl text-2xl md:font-semibold font-medium">Your cart is empty</h3>
           </div>
         )}
       </div>
       <div className="w-full flex gap-2 items-center justify-between">
-        <p className="text-xl font-semibold text-gray-600">
+        <p className="md:text-xl text-lg md:font-semibold font-medium text-gray-600">
           Total price: Rs.{totalPrice}{" "}
         </p>
-        <button className="py-1 px-2 bg-secondColor text-white rounded">
+        <button className="py-1 px-2 bg-secondColor text-white rounded md:text-base text-sm">
           Checkout
         </button>
       </div>

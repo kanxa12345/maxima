@@ -16,11 +16,9 @@ import Image from "next/image";
 
 const Banner = () => {
   const images = [
-    "/images/banner-image/img1.avif",
-    "/images/banner-image/img2.avif",
-    "/images/banner-image/img3.avif",
-    "/images/banner-image/img4.avif",
-    "/images/banner-image/img5.avif",
+    "/images/banner-image/banner1.jpg",
+    "/images/banner-image/banner2.jpg",
+    "/images/banner-image/banner3.jpg",
   ];
 
   return (
@@ -51,9 +49,9 @@ const Banner = () => {
             <Image
               src={image}
               priority={true}
-              height={300}
-              width={300}
-              className="w-full lg:h-[600px] md:h-[400px] h-[300px] object-cover"
+              height={6000}
+              width={6000}
+              className="w-full lg:h-[600px] md:h-[400px] sm:h-[300px] h-[200px] object-cover"
               alt="banner-image"
             />
           </SwiperSlide>

@@ -15,6 +15,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [categoryMenus, setCategoryMenus] = useState({});
   const [subcategoryMenus, setSubcategoryMenus] = useState({});
+  const [nav, setNav] = useState(false);
 
   const groupedData = {};
 
@@ -150,12 +151,13 @@ const Header = () => {
   const [openWishlist, setOpenWishlist] = useState(false);
   return (
     <>
+      {/* top header */}
       <header
         className={`sticky top-0 z-40 bg-white ${
           scrolled ? "shadow-[0_0_10px_2px_rgba(0,0,0,0.2)]" : ""
         }`}
       >
-        <div className="container flex justify-between items-center py-2">
+        <div className="container flex justify-between items-center gap-2 py-2">
           <Link href="/">
             <Image
               src="/images/logo.png"
@@ -163,34 +165,37 @@ const Header = () => {
               height={100}
               alt="logo"
               priority={true}
-              className="w-[150px]"
+              className="lg:w-[150px] sm:w-[120px] w-[80px]"
             />
           </Link>
-          <div className="w-1/3 relative">
+          <div className="md:w-1/3 w-1/2 relative">
             <input
               type="search"
-              placeholder="search product here..."
+              placeholder="search product"
               value={text}
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
-              className="border border-gray-400 p-2 rounded-lg w-full focus:outline-none"
+              className="border border-gray-400 md:p-2 p-1 rounded-lg w-full focus:outline-none md:text-base sm:text-sm text-xs"
             />
             <button
               onClick={handleSearch}
-              className="w-[25px] h-[25px] rounded-full flex items-center justify-center bg-gray-200 absolute right-2 top-1/2 -translate-y-1/2 hover:bg-gray-300 transition-all duration-150 ease-linear"
+              className="md:w-[25px] w-5 md:h-[25px] h-5 rounded-full flex items-center justify-center bg-gray-200 absolute right-2 top-1/2 -translate-y-1/2 hover:bg-gray-300 transition-all duration-150 ease-linear"
             >
               <i
                 aria-hidden={true}
-                className="fa-solid fa-magnifying-glass text-sm"
+                className="fa-solid fa-magnifying-glass md:text-sm text-xs"
               ></i>
             </button>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center md:gap-6 gap-3">
             <button
               onClick={openModal}
-              className="flex items-center justify-center h-[25px] w-[25px] rounded-full border border-gray-800"
+              className="flex items-center justify-center md:h-[25px] sm:h-5 h-4 md:w-[25px] sm:w-5 w-4 rounded-full border border-gray-800"
             >
-              <i aria-hidden={true} className="fa-solid fa-user text-xs"></i>
+              <i
+                aria-hidden={true}
+                className="fa-solid fa-user md:text-xs sm:text-[10px] text-[8px]"
+              ></i>
             </button>
             <button
               onClick={() => {
@@ -198,7 +203,10 @@ const Header = () => {
               }}
               className="relative"
             >
-              <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
+              <i
+                aria-hidden={true}
+                className="fa-solid fa-cart-shopping md:text-base sm:text-sm text-xs"
+              ></i>
               <span
                 className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${
                   Object.values(filteredCartItems).length > 0
@@ -215,7 +223,10 @@ const Header = () => {
               }}
               className="relative"
             >
-              <i aria-hidden={true} className="fa-solid fa-heart"></i>
+              <i
+                aria-hidden={true}
+                className="fa-solid fa-heart md:text-base sm:text-sm text-xs"
+              ></i>
               <span
                 className={`absolute -top-2 -right-3 bg-red-500 text-white text-[10px] w-[15px] h-[15px] rounded-full justify-center items-center ${
                   Object.values(filteredWishlistItems).length > 0
@@ -229,171 +240,217 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav className="bg-brandColor text-white relative z-10">
+
+      {/* bottom header */}
+      <nav className="bg-brandColor text-white relative lg:z-10 lg:py-0 py-2">
         <div className="container flex items-center justify-between">
+          <span onClick={() => setNav(true)} className="lg:hidden text-xl">
+            <i aria-hidden={true} className="fa-solid fa-bars"></i>
+          </span>
           <div
-            onClick={() => {
-              handleCategoryHover(
-                "Products",
-                categoryMenus["Products"] ? false : true
-              );
-            }}
-            onMouseEnter={() => {
-              if (window.innerWidth > 1024) {
-                handleCategoryHover("Products", true);
-              }
-            }}
-            onMouseLeave={() => {
-              if (window.innerWidth > 1024) {
-                handleCategoryHover("Products", false);
-              }
-            }}
-            className={` relative cursor-pointer py-3 w-40`}
+            className={`cursor-pointer lg:p-0 lg:w-60 w-60 lg:bg-transparent lg:overflow-visible overflow-y-auto lg:bg-white bg-black lg:h-auto h-screen lg:relative fixed lg:z-0 z-[300] top-0 lg:left-0 lg:transition-none transition-all duration-200 ease-linear ${
+              nav ? "left-0 p-6" : "-left-60 p-0"
+            }`}
           >
-            <span className="w-full bg-white text-black py-1 px-2 flex items-center justify-between rounded">
-              Products
-              <i
-                aria-hidden={true}
-                className={`fa-solid fa-angle-down text-sm ${
-                  categoryMenus["Products"] ? "rotate-180" : ""
-                } transition-all duration-200 ease-linear`}
-              ></i>
+            <span
+              onClick={() => setNav(false)}
+              className={`lg:hidden float-right mb-5 text-xl ${
+                nav ? "block" : "hidden"
+              }`}
+            >
+              <i aria-hidden={true} className="fa-solid fa-xmark"></i>
             </span>
-            {Object.values(groupedData).length > 0 && (
-              <div
-                className={`lg:bg-gray-100 lg:text-black text-gray-400 ${
-                  categoryMenus["Products"] ? "block" : "hidden"
-                } lg:absolute lg:top-[56px] lg:left-0 lg:border lg:mt-0 mt-2 h-96`}
+            <div
+              onClick={() => {
+                handleCategoryHover(
+                  "Products",
+                  categoryMenus["Products"] ? false : true
+                );
+              }}
+              onMouseEnter={() => {
+                if (window.innerWidth > 1024) {
+                  handleCategoryHover("Products", true);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 1024) {
+                  handleCategoryHover("Products", false);
+                }
+              }}
+              className="py-3"
+            >
+              <span
+                className={`w-full bg-white text-black lg:flex py-1 px-2 hidden items-center justify-between rounded`}
               >
-                <div className="flex flex-col lg:w-60 w-full h-full overflow-y-auto">
-                  {Object.values(groupedData).map(
-                    (categoryItem, categoryIndex) => (
-                      <div
-                        key={categoryIndex}
-                        className="p-2 lg:border-b lg:hover:bg-white w-full flex items-center justify-between text-sm"
-                        onMouseEnter={() => {
-                          if (window.innerWidth > 1024) {
-                            handleCategoryHover(categoryItem.category, true);
-                          }
-                        }}
-                        onMouseLeave={() => {
-                          if (window.innerWidth > 1024) {
-                            handleCategoryHover(categoryItem.category, false);
-                          }
-                        }}
-                        onClick={() => {
-                          if (window.innerWidth > 1024) {
-                            setCategoryMenus({});
-                          }
-                          router.push(`/category/${categoryItem.category}`);
-                          handleCategoryHover(
-                            categoryItem.category,
-                            categoryMenus[categoryItem.category] ? false : true
-                          );
-                        }}
-                      >
-                        {categoryItem.category}
-                        <i
-                          aria-hidden={true}
-                          className="fa-solid fa-angle-right text-sm text-gray-500 pr-[14px]"
-                        ></i>
-                        {Object.values(categoryItem.subcategories).length >
-                          0 && (
+                Products
+                <i
+                  aria-hidden={true}
+                  className={`fa-solid fa-angle-down text-sm ${
+                    categoryMenus["Products"] ? "rotate-180" : ""
+                  } transition-all duration-200 ease-linear`}
+                ></i>
+              </span>
+              {Object.values(groupedData).length > 0 && (
+                <div
+                  className={`lg:bg-gray-100 lg:text-black text-white ${
+                    categoryMenus["Products"] || nav ? "block" : "hidden"
+                  } lg:absolute lg:top-[56px] lg:left-0 lg:border lg:mt-0 mt-2 lg:h-96`}
+                >
+                  <div className="flex flex-col lg:gap-0 gap-1 lg:w-60 w-full h-full lg:overflow-y-auto">
+                    {Object.values(groupedData).map(
+                      (categoryItem, categoryIndex) => (
+                        <div
+                          key={categoryIndex}
+                          className="p-2 lg:border-b lg:hover:bg-white w-full lg:flex items-center justify-between text-sm"
+                          onMouseEnter={() => {
+                            if (window.innerWidth > 1024) {
+                              handleCategoryHover(categoryItem.category, true);
+                            }
+                          }}
+                          onMouseLeave={() => {
+                            if (window.innerWidth > 1024) {
+                              handleCategoryHover(categoryItem.category, false);
+                            }
+                          }}
+                          onClick={() => {
+                            if (window.innerWidth > 1024) {
+                              setCategoryMenus({});
+                            }
+                            router.push(`/category/${categoryItem.category}`);
+                          }}
+                        >
                           <div
-                            className={`lg:bg-white bg-black lg:text-black text-gray-500 ${
-                              categoryMenus[categoryItem.category]
-                                ? "block"
-                                : "hidden"
-                            } lg:absolute lg:-top-[1px] lg:left-[220px] lg:border lg:mt-0 mt-2 h-96`}
+                            onClick={() =>
+                              handleCategoryHover(
+                                categoryItem.category,
+                                categoryMenus[categoryItem.category]
+                                  ? false
+                                  : true
+                              )
+                            }
+                            className="flex items-center justify-between w-full"
                           >
-                            <div className="flex flex-col lg:w-60 w-full h-full overflow-y-auto">
-                              {Object.values(categoryItem.subcategories).map(
-                                (subCategoryItem, subCategoryIndex) => (
-                                  <div
-                                    key={subCategoryIndex}
-                                    className="p-2 lg:border-b lg:hover:bg-gray-100 text-sm w-full flex items-center justify-between"
-                                    onMouseEnter={() => {
-                                      if (window.innerWidth > 1024) {
-                                        handleSubcategoryHover(
-                                          subCategoryItem.subCategory,
-                                          true
-                                        );
-                                      }
-                                    }}
-                                    onMouseLeave={() => {
-                                      if (window.innerWidth > 1024) {
-                                        handleSubcategoryHover(
-                                          subCategoryItem.subCategory,
-                                          false
-                                        );
-                                      }
-                                    }}
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      router.push(
-                                        `/category/${categoryItem.category}/${subCategoryItem.subCategory}`
-                                      );
-                                      handleSubcategoryHover(
-                                        subCategoryItem.subCategory,
-                                        subcategoryMenus[
-                                          subCategoryItem.subCategory
-                                        ]
-                                          ? false
-                                          : true
-                                      );
-                                    }}
-                                  >
-                                    {subCategoryItem.subCategory}
-                                    <i
-                                      aria-hidden={true}
-                                      className="fa-solid fa-angle-right text-sm text-gray-500 pr-[14px]"
-                                    ></i>
-                                    {subCategoryItem.products.length > 0 && (
-                                      <div
-                                        className={`lg:bg-white lg:text-black text-gray-400 ${
-                                          subcategoryMenus[
-                                            subCategoryItem.subCategory
-                                          ]
-                                            ? "block"
-                                            : "hidden"
-                                        } lg:absolute lg:-top-[1px] lg:left-[220px] lg:border lg:mt-0 mt-2 h-96`}
-                                      >
-                                        <div className="flex flex-col lg:w-60 w-full h-full overflow-y-auto">
-                                          {subCategoryItem.products.map(
-                                            (productItem, productIndex) => {
-                                              return (
-                                                <div
-                                                  onClick={(e) => {
-                                                    setCategoryMenus({});
-                                                    setSubcategoryMenus({});
-                                                    e.stopPropagation();
-                                                    router.push(
-                                                      `/category/${categoryItem.category}/${subCategoryItem.subCategory}/${productItem.product}`
-                                                    );
-                                                  }}
-                                                  key={productIndex}
-                                                  className="p-2 lg:border-b inline-block w-full relative text-sm"
-                                                >
-                                                  {productItem.product}
-                                                </div>
-                                              );
-                                            }
-                                          )}
-                                        </div>
-                                      </div>
-                                    )}
-                                  </div>
-                                )
-                              )}
-                            </div>
+                            {categoryItem.category}
+                            <i
+                              aria-hidden={true}
+                              className={`fa-solid fa-angle-right lg:transition-none transition-all duration-150 ease-linear lg:rotate-0 ${
+                                categoryMenus[categoryItem.category]
+                                  ? "rotate-90"
+                                  : ""
+                              } text-sm lg:text-gray-500 lg:pr-[14px]`}
+                            ></i>
                           </div>
-                        )}
-                      </div>
-                    )
-                  )}
+                          {Object.values(categoryItem.subcategories).length >
+                            0 && (
+                            <div
+                              className={`lg:bg-white bg-black lg:text-black text-gray-300 ${
+                                categoryMenus[categoryItem.category]
+                                  ? "block"
+                                  : "hidden"
+                              } lg:absolute lg:-top-[1px] lg:left-[220px] lg:border lg:mt-0 mt-2 lg:h-96`}
+                            >
+                              <div className="flex flex-col lg:gap-0 gap-1 lg:w-60 w-full h-full lg:overflow-y-auto">
+                                {Object.values(categoryItem.subcategories).map(
+                                  (subCategoryItem, subCategoryIndex) => (
+                                    <div
+                                      key={subCategoryIndex}
+                                      className="p-2 lg:border-b lg:hover:bg-gray-100 text-sm w-full lg:flex items-center justify-between"
+                                      onMouseEnter={() => {
+                                        if (window.innerWidth > 1024) {
+                                          handleSubcategoryHover(
+                                            subCategoryItem.subCategory,
+                                            true
+                                          );
+                                        }
+                                      }}
+                                      onMouseLeave={() => {
+                                        if (window.innerWidth > 1024) {
+                                          handleSubcategoryHover(
+                                            subCategoryItem.subCategory,
+                                            false
+                                          );
+                                        }
+                                      }}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        router.push(
+                                          `/category/${categoryItem.category}/${subCategoryItem.subCategory}`
+                                        );
+                                      }}
+                                    >
+                                      <div
+                                        onClick={() =>
+                                          handleSubcategoryHover(
+                                            subCategoryItem.subCategory,
+                                            subcategoryMenus[
+                                              subCategoryItem.subCategory
+                                            ]
+                                              ? false
+                                              : true
+                                          )
+                                        }
+                                        className="w-full flex items-center justify-between"
+                                      >
+                                        {subCategoryItem.subCategory}
+                                        <i
+                                          aria-hidden={true}
+                                          className={`fa-solid fa-angle-right lg:transition-none transition-all duration-150 ease-linear lg:rotate-0 ${
+                                            subcategoryMenus[
+                                              subCategoryItem.subCategory
+                                            ]
+                                              ? "rotate-90"
+                                              : ""
+                                          } text-sm lg:text-gray-500 lg:pr-[14px]`}
+                                        ></i>
+                                      </div>
+                                      {subCategoryItem.products.length > 0 && (
+                                        <div
+                                          className={`lg:bg-white lg:text-black text-gray-300 ${
+                                            subcategoryMenus[
+                                              subCategoryItem.subCategory
+                                            ]
+                                              ? "block"
+                                              : "hidden"
+                                          } lg:absolute lg:-top-[1px] lg:left-[220px] lg:border lg:mt-0 mt-2 lg:h-96`}
+                                        >
+                                          <div className="flex flex-col lg:gap-0 gap-1 lg:w-60 w-full h-full lg:overflow-y-auto">
+                                            {subCategoryItem.products.map(
+                                              (productItem, productIndex) => {
+                                                return (
+                                                  <div
+                                                    onClick={(e) => {
+                                                      setCategoryMenus({});
+                                                      setSubcategoryMenus({});
+                                                      setNav(false);
+                                                      e.stopPropagation();
+                                                      router.push(
+                                                        `/category/${categoryItem.category}/${subCategoryItem.subCategory}/${productItem.product}`
+                                                      );
+                                                    }}
+                                                    key={productIndex}
+                                                    className="p-2 lg:border-b inline-block w-full relative lg:text-sm text-xs"
+                                                  >
+                                                    {productItem.product}
+                                                  </div>
+                                                );
+                                              }
+                                            )}
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
           <div>
             <button className="flex items-center gap-2 text-lg font-medium">
@@ -401,7 +458,7 @@ const Header = () => {
                 aria-hidden={true}
                 className="fa-solid fa-truck-fast text-base"
               ></i>
-              Track your order
+              <p className="sm:inline-block hidden">Track your order</p>
             </button>
           </div>
         </div>

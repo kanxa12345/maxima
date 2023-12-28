@@ -24,11 +24,11 @@ const ProductCat = () => {
       {Object.values(groupedData).length > 0 && (
         <div className="container flex flex-col sm:items-start items-center gap-2">
           <h2 className="md:text-2xl text-xl font-medium">Categories</h2>
-          <div className="w-full grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+          <div className="w-full grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-4 gap-2">
             {Object.values(groupedData).map((dataItem, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-2 p-2 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] group rounded-sm bg-white"
+                className="flex flex-col items-center gap-2 p-2 shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] group rounded-sm bg-white"
               >
                 <button
                   onClick={() => router.push(`/category/${dataItem.title}`)}
@@ -39,11 +39,11 @@ const ProductCat = () => {
                     priority={true}
                     height={200}
                     width={200}
-                    className="w-full h-[250px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear"
+                    className="w-full sm:h-[250px] h-[150px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear"
                     alt={dataItem.title}
                   />
                 </button>
-                <h3 className="text-xl font-medium">{dataItem.title}</h3>
+                <h3 className="sm:text-xl text-lg font-medium leading-5 text-center">{dataItem.title}</h3>
               </div>
             ))}
           </div>
