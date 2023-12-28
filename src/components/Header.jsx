@@ -248,7 +248,7 @@ const Header = () => {
             <i aria-hidden={true} className="fa-solid fa-bars"></i>
           </span>
           <div
-            className={`cursor-pointer lg:p-0 lg:w-60 w-60 lg:bg-transparent lg:overflow-visible overflow-y-auto lg:bg-white bg-black lg:h-auto h-screen lg:relative fixed lg:z-0 z-[300] top-0 lg:left-0 lg:transition-none transition-all duration-200 ease-linear ${
+            className={`cursor-pointer lg:p-0 lg:w-60 w-60 lg:bg-transparent lg:overflow-visible overflow-y-auto bg-black lg:h-auto h-screen lg:relative fixed lg:z-0 z-[300] top-0 lg:left-0 lg:transition-none transition-all duration-200 ease-linear ${
               nav ? "left-0 p-6" : "-left-60 p-0"
             }`}
           >

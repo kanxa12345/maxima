@@ -47,11 +47,12 @@ const product = () => {
                 {data && (
                     <div className="container flex md:flex-row flex-col gap-8">
                         <div className='md:w-1/3 w-full'>
-                            <Image src={data.imageUrl} priority={true} width={200} height={200} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
+                            <Image src={data.imageUrl} priority={true} width={1000} height={1000} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
                         </div>
                         <div className='flex flex-col items-start sm:gap-2 gap-1 md:w-2/3 w-full'>
                             <small className='text-base font-semibold text-gray-500'>{category}</small>
                             <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold'>{product}</h1>
+                            <big className='md:text-xl text-lg font-semibold text-gray-700'>{data.modal}</big>
                             <p className='text-gray-950 sm:text-base text-sm'>{data.description}</p>
                             <p className='sm:text-lg font-medium'>Availability: {data.availability}</p>
                             <div className='flex items-center gap-1 sm:text-lg font-medium'>
@@ -72,10 +73,10 @@ const product = () => {
                 )}
             </section>
             {otherProducts.length > 0 && (
-                <section className='py-20'>
+                <section className='md:py-20 py-16 bg-gray-100'>
                     <div className="container flex flex-col items-start gap-4">
-                        <h2 className='text-2xl font-medium'>Similar Products</h2>
-                        <div className="w-full grid grid-cols-6 gap-4">
+                        <h2 className='md:text-2xl text-xl font-medium'>Similar Products</h2>
+                        <div className="w-full grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-4 gap-2">
                             {otherProducts.map((dataItem, index) => (
                                 <ProductItem key={index} category={category} subCategory={subCategory} dataItem={dataItem} />
                             ))}

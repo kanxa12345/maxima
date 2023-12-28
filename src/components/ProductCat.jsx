@@ -37,8 +37,8 @@ const ProductCat = () => {
                   <Image
                     src={dataItem.thumbnailImage}
                     priority={true}
-                    height={200}
-                    width={200}
+                    height={1000}
+                    width={1000}
                     className="w-full sm:h-[250px] h-[150px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear"
                     alt={dataItem.title}
                   />

@@ -17,7 +17,7 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
   };
 
   return (
-    <div className="flex flex-col items-start gap-2 p-2 shadow-[0_0_8px_1px_rgba(0,0,0,0.1)] group rounded-sm relative overflow-hidden">
+    <div className="flex flex-col items-start gap-2 p-2 shadow-[0_0_8px_1px_rgba(0,0,0,0.1)] group rounded-sm relative overflow-hidden bg-white">
       <button
         onClick={() =>
           router.push(
@@ -29,8 +29,8 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
         <Image
           src={dataItem.imageUrl}
           priority={true}
-          height={200}
-          width={200}
+          height={1000}
+          width={1000}
           className="w-full h-full object-cover group-hover:scale-110 transition-all duration-200 ease-linear"
           alt={dataItem.product}
         />

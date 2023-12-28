@@ -43,7 +43,7 @@ const category = () => {
             {Object.values(groupedData).map((dataItem, index) => (
               <div key={index} className='flex flex-col items-center gap-2 p-2 shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] group rounded-sm'>
                 <button onClick={() => router.push(`/category/${category}/${dataItem.title}`)} className='overflow-hidden'>
-                  <Image priority={true} height={200} width={200} className='w-full sm:h-[250px] h-[150px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' src={dataItem.thumbnailImage} alt={dataItem.title} />
+                  <Image priority={true} height={1000} width={1000} className='w-full sm:h-[250px] h-[150px] object-cover group-hover:scale-110 transition-all duration-200 ease-linear' src={dataItem.thumbnailImage} alt={dataItem.title} />
                 </button>
                 <h3 className='sm:text-xl text-lg font-medium leading-5 text-center'>{dataItem.title}</h3>
               </div>
