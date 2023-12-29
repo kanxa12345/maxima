@@ -49,7 +49,7 @@ const product = () => {
                         <div className='md:w-1/3 w-full'>
                             <Image src={data.imageUrl} priority={true} width={1000} height={1000} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
                         </div>
-                        <div className='flex flex-col items-start sm:gap-2 gap-1 md:w-2/3 w-full'>
+                        <div className='flex flex-col items-start gap-1 md:w-2/3 w-full'>
                             <small className='text-base font-semibold text-gray-500'>{category}</small>
                             <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold'>{product}</h1>
                             <big className='md:text-xl text-lg font-semibold text-gray-700'>{data.modal}</big>
@@ -68,6 +68,17 @@ const product = () => {
                                 <button onClick={() => HandleAddWishlist(data)} className='sm:p-2 p-1 rounded sm:text-sm text-xs font-medium bg-brandColor text-white'>Add to wishlist</button>
                                 <button onClick={() => HandleAddCart(data)} className='sm:p-2 p-1 rounded sm:text-sm text-xs font-medium bg-secondColor text-white'>Add to cart</button>
                             </div>
+                            {data.features.length > 0 && (
+                                <div className='flex flex-col items-start mt-1'>
+                                    <h3 className='text-lg font-medium'>More features</h3>
+                                    {data.features.map((item, index) => (
+                                        <p key={index} className='sm:text-base text-sm'>
+                                            <span className='font-medium mr-1'>{index + 1}.</span>
+                                            {item}
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}
