@@ -3,6 +3,7 @@ import cartReducer from '@/redux/Cartslice';
 import wishlistReducer from '@/redux/Wishlistslice';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import logger from "redux-logger";
 
 const persistConfig = {
     key: 'root',
@@ -17,7 +18,8 @@ const reducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, reducer)
 export const store = configureStore({
     reducer: persistedReducer,
+    middleware: () => ([logger])
 });
 
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);

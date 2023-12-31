@@ -45,7 +45,7 @@ const Wishlist = () => {
                 alt={dataItem.product}
                 className="md:w-[150px] w-[100px] md:h-[100px] h-[80px] object-cover object-center"
               />
-              <div className="flex flex-col items-start gap-1">
+              <div className="flex flex-col items-start gap-1 w-2/3">
                 <p className="md:text-lg font-medium">{dataItem.product}</p>
                 <div className="flex items-center gap-2">
                   <button
