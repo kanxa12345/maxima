@@ -21,7 +21,9 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
       <button
         onClick={() =>
           router.push(
-            `/category/${category}/${subCategory}/${dataItem.product}`
+            `/category/${category}/${encodeURIComponent(
+              subCategory
+            )}/${encodeURIComponent(dataItem.product)}`
           )
         }
         className="overflow-hidden inline-block sm:h-[200px] h-[150px] w-full"
@@ -50,10 +52,16 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
         </button>
       </div>
       <div className="flex flex-col items-start justify-between gap-1 py-1 px-2 flex-grow">
-        <small className="sm:text-sm text-xs font-medium text-gray-600">{category}</small>
-        <h3 className="sm:text-lg text-base font-medium sm:leading-5 leading-4">{dataItem.product}</h3>
+        <small className="sm:text-sm text-xs font-medium text-gray-600">
+          {category}
+        </small>
+        <h3 className="sm:text-lg text-base font-medium sm:leading-5 leading-4">
+          {dataItem.product}
+        </h3>
         <div>
-          <p className="text-brandColor font-medium sm:text-base text-sm">Rs.{dataItem.newPrice}</p>
+          <p className="text-brandColor font-medium sm:text-base text-sm">
+            Rs.{dataItem.newPrice}
+          </p>
           {dataItem.oldPrice.length > 0 && (
             <p className="line-through text-gray-500 sm:text-sm text-xs">
               Rs.{dataItem.oldPrice}

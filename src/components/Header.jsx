@@ -8,10 +8,13 @@ import Login from "./Login";
 import { useSelector } from "react-redux";
 import DisplayCart from "./DisplayCart";
 import Wishlist from "./Wishlist";
+import TrackOrder from "./TrackOrder";
 
+Modal.setAppElement("#__next");
 const Header = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
+  const [openTrack, setOpenTrack] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [categoryMenus, setCategoryMenus] = useState({});
   const [subcategoryMenus, setSubcategoryMenus] = useState({});
@@ -65,12 +68,12 @@ const Header = () => {
     };
   }, []);
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openModal = (setFunction) => {
+    setFunction(true);
     document.body.classList.add("overflow-hidden");
   };
-  const closeModal = () => {
-    setIsOpen(false);
+  const closeModal = (setFunction) => {
+    setFunction(false);
     document.body.classList.remove("overflow-hidden");
   };
 
@@ -82,7 +85,7 @@ const Header = () => {
 
   const handleSearch = () => {
     if (text.trim() === "") {
-      return; // Do nothing if the search text is empty
+      return;
     }
 
     // Check if the search text matches a category, subcategory, or product
@@ -149,6 +152,7 @@ const Header = () => {
   }, {});
   const [openCart, setOpenCart] = useState(false);
   const [openWishlist, setOpenWishlist] = useState(false);
+
   return (
     <>
       {/* top header */}
@@ -189,7 +193,7 @@ const Header = () => {
           </div>
           <div className="flex items-center md:gap-6 gap-3">
             <button
-              onClick={openModal}
+              onClick={() => openModal(setOpenLogin)}
               className="flex items-center justify-center md:h-[25px] sm:h-5 h-4 md:w-[25px] sm:w-5 w-4 rounded-full border border-gray-800"
             >
               <i
@@ -374,7 +378,7 @@ const Header = () => {
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         router.push(
-                                          `/category/${categoryItem.category}/${subCategoryItem.subCategory}`
+                                          `/category/${categoryItem.category}/${encodeURIComponent(subCategoryItem.subCategory)}`
                                         );
                                       }}
                                     >
@@ -424,7 +428,7 @@ const Header = () => {
                                                       setNav(false);
                                                       e.stopPropagation();
                                                       router.push(
-                                                        `/category/${categoryItem.category}/${subCategoryItem.subCategory}/${productItem.product}`
+                                                        `/category/${categoryItem.category}/${encodeURIComponent(subCategoryItem.subCategory)}/${encodeURIComponent(productItem.product)}`
                                                       );
                                                     }}
                                                     key={productIndex}
@@ -453,7 +457,10 @@ const Header = () => {
             </div>
           </div>
           <div>
-            <button className="flex items-center gap-2 text-lg font-medium">
+            <button
+              onClick={() => openModal(setOpenTrack)}
+              className="flex items-center gap-2 text-lg font-medium"
+            >
               <i
                 aria-hidden={true}
                 className="fa-solid fa-truck-fast text-base"
@@ -464,11 +471,18 @@ const Header = () => {
         </div>
       </nav>
       <Modal
-        isOpen={isOpen}
+        isOpen={openLogin}
         onRequestClose={closeModal}
         className="h-full w-full flex justify-center items-center"
       >
-        <Login closeModal={closeModal} />
+        <Login closeModal={closeModal} setOpenLogin={setOpenLogin} />
+      </Modal>
+      <Modal
+        isOpen={openTrack}
+        onRequestClose={closeModal}
+        className="h-full w-full flex justify-center items-center"
+      >
+        <TrackOrder closeModal={closeModal} setOpenTrack={setOpenTrack} />
       </Modal>
       {openCart && <DisplayCart />}
       {openWishlist && <Wishlist />}

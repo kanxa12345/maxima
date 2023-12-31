@@ -36,7 +36,7 @@ const product = () => {
                             /
                         </div>
                         <div className='flex items-center gap-1'>
-                            <li className='text-gray-300'><Link href={`/category/${category}/${subCategory}`}>Products</Link></li>
+                            <li className='text-gray-300'><Link href={`/category/${category}/${encodeURIComponent(subCategory)}`}>Products</Link></li>
                             /
                             <li>Product Detail</li>
                         </div>
@@ -47,7 +47,7 @@ const product = () => {
                 {data && (
                     <div className="container flex md:flex-row flex-col gap-8">
                         <div className='md:w-1/3 w-full'>
-                            <Image src={data.imageUrl} priority={true} width={1000} height={1000} alt={data.product} className='w-full sm:h-[350px] h-[300px] object-cover' />
+                            <Image src={data.imageUrl} priority={true} width={1000} height={1000} alt={data.product} className='w-full sm:h-[400px] h-[300px] object-contain' />
                         </div>
                         <div className='flex flex-col items-start gap-1 md:w-2/3 w-full'>
                             <small className='text-base font-semibold text-gray-500'>{category}</small>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const Login = ({ closeModal }) => {
+const Login = ({ closeModal, setOpenLogin }) => {
   const [activeBox, setActiveBox] = useState(0);
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [showSignupPassword, setShowSignupPassword] = useState(false);
@@ -63,7 +63,7 @@ const Login = ({ closeModal }) => {
         className={`xl:w-[25%] lg:w-8/12 w-10/12 bg-white py-4 px-10 shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] flex flex-col items-center`}
       >
         <button
-          onClick={closeModal}
+          onClick={() => closeModal(setOpenLogin)}
           className="w-[35px] h-[35px] flex justify-center items-center bg-gray-200 rounded-full ms-auto mb-2"
         >
           <i className="fa-solid fa-xmark text-xl"></i>
@@ -180,7 +180,7 @@ const Login = ({ closeModal }) => {
               <input
                 type={`${showSignupPassword ? "text" : "password"}`}
                 id="password"
-                minlength="8"
+                minLength="8"
                 name="password"
                 placeholder="Create Password"
                 value={signUpForm.password}
