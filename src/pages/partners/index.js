@@ -61,12 +61,12 @@ const index = () => {
       <section className="md:py-20 py-16">
         <div className="container flex flex-col items-center gap-4">
           <div className="flex flex-col items-start gap-4 w-full">
-            <div className="flex items-start gap-4 w-full border-b border-gray-600">
+            <div className="flex flex-wrap items-start md:gap-4 gap-1 w-full border-b border-gray-600">
               {Object.values(groupedData).map((provinceItem, provinceIndex) => (
                 <div key={provinceIndex}>
                   <button
                     onClick={() => handleProvince(provinceIndex)}
-                    className={`py-1 px-2 ${
+                    className={`py-1 px-2 md:text-base text-sm ${
                       activeProvince === provinceIndex ? "text-brandColor" : ""
                     }`}
                   >
@@ -84,7 +84,7 @@ const index = () => {
                   }`}
                 >
                   {activeProvince === provinceIndex && (
-                    <div className="flex items-start gap-4 border-b border-gray-400 w-full">
+                    <div className="flex flex-wrap items-start md:gap-4 gap-1 border-b border-gray-400 w-full">
                       {Object.values(provinceItem.districts).map(
                         (districtItem, districtIndex) => (
                           <div key={districtIndex}>
@@ -93,7 +93,7 @@ const index = () => {
                                 e.stopPropagation(),
                                   handleDistrict(districtIndex);
                               }}
-                              className={`py-1 px-2 ${
+                              className={`py-1 px-2 md:text-base text-sm ${
                                 activeDistrict === districtIndex
                                   ? "text-thirdColor"
                                   : ""
@@ -135,9 +135,9 @@ const index = () => {
                                   (clientItem, clientIndex) => (
                                     <div
                                       key={clientIndex}
-                                      className="flex items-center gap-8 w-full shadow-md p-4"
+                                      className="flex sm:flex-row flex-col items-center gap-8 w-full shadow-md p-4"
                                     >
-                                      <div className="w-1/4">
+                                      <div className="sm:w-1/4 w-full">
                                         <Image
                                           src={clientItem.imageUrl}
                                           priority={true}
@@ -147,23 +147,23 @@ const index = () => {
                                           className="w-full h-[200px] object-contain"
                                         />
                                       </div>
-                                      <div className="w-3/4 flex flex-col items-start">
-                                        <h3 className="text-xl font-semibold">
+                                      <div className="sm:w-3/4 w-full flex flex-col items-start">
+                                        <h3 className="md:text-x text-lg font-semibold">
                                           {clientItem.companyName}
                                         </h3>
-                                        <span className="flex items-center gap-1">
+                                        <span className="flex items-center gap-1 md:text-base text-sm">
                                           <p className="font-medium">
                                             Location:
                                           </p>
                                           {clientItem.location}
                                         </span>
-                                        <span className="flex items-center gap-1">
+                                        <span className="flex items-center gap-1 md:text-base text-sm">
                                           <p className="font-medium">
                                             Contact No.:
                                           </p>
                                           {clientItem.contact}
                                         </span>
-                                        <span className="flex items-center gap-1">
+                                        <span className="flex items-center gap-1 md:text-base text-sm">
                                           <p className="font-medium">Email:</p>
                                           {clientItem.email}
                                         </span>

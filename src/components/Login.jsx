@@ -47,7 +47,7 @@ const Login = ({ closeModal, setOpenLogin }) => {
       alert("Form submitted successfully!");
       setSignUpForm(initialSignUpForm);
     } else {
-      alert("You re-enter the wrong password");
+      alert("Confirmed password did not match");
     }
   };
 

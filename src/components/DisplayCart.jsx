@@ -23,7 +23,15 @@ const DisplayCart = () => {
 
   useEffect(() => {
     setTotalPrice(
-      cartItems.reduce((result, item) => result + parseInt(item.newPrice), 0)
+      cartItems.reduce((result, item) => {
+        const price = parseInt(item.newPrice);
+        if (price) {
+          return result + price;
+        }
+        else {
+          return result;
+        }
+      }, 0)
     );
   }, [cartItems]);
 
@@ -92,7 +100,9 @@ const DisplayCart = () => {
           ))
         ) : (
           <div>
-            <h3 className="md:text-3xl text-2xl md:font-semibold font-medium">Your cart is empty</h3>
+            <h3 className="md:text-3xl text-2xl md:font-semibold font-medium">
+              Your cart is empty
+            </h3>
           </div>
         )}
       </div>
