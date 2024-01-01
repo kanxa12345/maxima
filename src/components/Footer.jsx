@@ -29,7 +29,9 @@ const Footer = () => {
               />
               <div className="flex gap-5">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/HikvisionNepalOfficial"
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-[20px] h-[20px] text-xs rounded-full border border-black flex justify-center items-center"
                 >
                   <i aria-hidden={true} className="fa-brands fa-facebook-f"></i>

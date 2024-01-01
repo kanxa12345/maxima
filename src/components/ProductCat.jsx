@@ -43,7 +43,9 @@ const ProductCat = () => {
                     alt={dataItem.title}
                   />
                 </button>
-                <h3 className="sm:text-xl text-lg font-medium leading-5 text-center">{dataItem.title}</h3>
+                <h3 className="sm:text-xl text-lg font-medium leading-5 text-center">
+                  {dataItem.title}
+                </h3>
               </div>
             ))}
           </div>

@@ -231,19 +231,6 @@ export default [
     },
     {
         id: 11,
-        category: 'Audios',
-        subCategory: 'Headphones',
-        product: 'Hell Dragon Series Gaming RGB Headphone',
-        imageUrl: '/images/product-images/audio1.webp',
-        modal: 'DS-D5022FN-C',
-        oldPrice: '5000',
-        newPrice: '2000',
-        availability: 'In Stock',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.',
-        features: []
-    },
-    {
-        id: 12,
         category: 'Storage',
         subCategory: 'Hard disk drive',
         product: '1TB HDD',
@@ -262,7 +249,7 @@ export default [
         ]
     },
     {
-        id: 13,
+        id: 12,
         category: 'Storage',
         subCategory: 'Hard disk drive',
         product: '2TB HDD',
@@ -279,7 +266,7 @@ export default [
         ]
     },
     {
-        id: 14,
+        id: 13,
         category: 'Storage',
         subCategory: 'Hard disk drive',
         product: '4TB HDD',
@@ -297,7 +284,7 @@ export default [
         ]
     },
     {
-        id: 15,
+        id: 14,
         category: 'Storage',
         subCategory: 'Hard disk drive',
         product: '6TB HDD',
@@ -315,7 +302,7 @@ export default [
         ]
     },
     {
-        id: 16,
+        id: 15,
         category: 'Storage',
         subCategory: 'Hard disk drive',
         product: '8TB HDD',
@@ -332,7 +319,7 @@ export default [
         ]
     },
     {
-        id: 17,
+        id: 16,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'Hikvision 32GB Memory Card',
@@ -349,7 +336,7 @@ export default [
         ]
     },
     {
-        id: 18,
+        id: 17,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'Hikvision 64GB Memory Card',
@@ -367,7 +354,7 @@ export default [
         ]
     },
     {
-        id: 19,
+        id: 18,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'Hikvision 128GB Memory Card',
@@ -386,7 +373,7 @@ export default [
         ]
     },
     {
-        id: 20,
+        id: 19,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'L2 Series Video Surveillance Micro SD Card (32GB)',
@@ -409,7 +396,7 @@ export default [
         ]
     },
     {
-        id: 21,
+        id: 20,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'L2 Series Video Surveillance Micro SD Card (64GB)',
@@ -426,7 +413,7 @@ export default [
         ]
     },
     {
-        id: 22,
+        id: 21,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'L2 Series Video Surveillance Micro SD Card (128GB)',
@@ -444,7 +431,7 @@ export default [
         ]
     },
     {
-        id: 23,
+        id: 22,
         category: 'Storage',
         subCategory: 'Solid state drive',
         product: 'Hikvision Memory Card 128GB 170MB/s MicroSD G2 Series',
@@ -471,7 +458,7 @@ export default [
         ]
     },
     {
-        id: 24,
+        id: 23,
         category: 'Storage',
         subCategory: 'Flash drive',
         product: 'M200S USB 3.0 32GB FLASH DRIVE',
@@ -491,7 +478,7 @@ export default [
         ]
     },
     {
-        id: 25,
+        id: 24,
         category: 'Storage',
         subCategory: 'Flash drive',
         product: 'M200S USB 3.0 64GB FLASH DRIVE',
@@ -511,20 +498,7 @@ export default [
         ]
     },
     {
-        id: 26,
-        category: 'Wearable',
-        subCategory: 'Smart Watch',
-        product: 'X-AGE BUZZ Smart Watch',
-        imageUrl: '/images/product-images/wearable1.webp',
-        modal: 'DS-D5022FN-C',
-        oldPrice: '5000',
-        newPrice: '2000',
-        availability: 'In Stock',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi unde tempora cumque praesentium quo doloremque, accusamus vitae quibusdam expedita odio voluptate labore adipisci laudantium quisquam quam, soluta maiores numquam similique distinctio minus placeat magni nemo sunt. Repellendus culpa sapiente nostrum ut inventore necessitatibus, accusamus ex hic. Error, temporibus perferendis.',
-        features: []
-    },
-    {
-        id: 27,
+        id: 25,
         category: 'Cameras',
         subCategory: 'Turbo HD analog camera ip/eco series',
         product: '2 MP Indoor Fixed Turret Camera',
@@ -540,7 +514,7 @@ export default [
         ]
     },
     {
-        id: 28,
+        id: 26,
         category: 'Cameras',
         subCategory: 'Turbo HD analog camera ip/eco series',
         product: '2 MP Fixed Mini Bullet Camera',
@@ -557,7 +531,7 @@ export default [
         ]
     },
     {
-        id: 29,
+        id: 27,
         category: 'Cameras',
         subCategory: 'Values series turbo HD analog camera',
         product: '2 MP Audio Indoor Fixed Turret Camera',
@@ -576,7 +550,7 @@ export default [
         ]
     },
     {
-        id: 30,
+        id: 28,
         category: 'Cameras',
         subCategory: 'Values series turbo HD analog camera',
         product: '2 MP Audio Fixed Mini Bullet Camera',
@@ -596,7 +570,7 @@ export default [
         ]
     },
     {
-        id: 31,
+        id: 29,
         category: 'Cameras',
         subCategory: 'HD straight value series(2MP)',
         product: '2 MP PIR Fixed Bullet Camera',
@@ -614,7 +588,7 @@ export default [
         ]
     },
     {
-        id: 32,
+        id: 30,
         category: 'Cameras',
         subCategory: 'Turbo HD vari-focal camera',
         product: '2 MP PoC Manual Varifocal Bullet Camera',
@@ -632,7 +606,7 @@ export default [
         ]
     },
     {
-        id: 33,
+        id: 31,
         category: 'Cameras',
         subCategory: 'Turbo HD 5.0 fc-series colorvu',
         product: '2 MP ColorVu Indoor Fixed Turret Camera',
@@ -652,7 +626,7 @@ export default [
         ]
     },
     {
-        id: 34,
+        id: 32,
         category: 'Cameras',
         subCategory: 'Turbo HD 5.0 fc-series colorvu',
         product: '2 MP ColorVu Fixed Mini Bullet Camera',
@@ -673,7 +647,7 @@ export default [
         ]
     },
     {
-        id: 35,
+        id: 33,
         category: 'Cameras',
         subCategory: 'Turbo HD 5.0 fc-series colorvu',
         product: '2 MP ColorVu Fixed Bullet Camera',
@@ -694,7 +668,7 @@ export default [
         ]
     },
     {
-        id: 36,
+        id: 34,
         category: 'Cameras',
         subCategory: '5MP exir camera',
         product: '5 MP Fixed Mini Bullet Camera',
@@ -712,7 +686,7 @@ export default [
         ]
     },
     {
-        id: 37,
+        id: 35,
         category: 'Cameras',
         subCategory: '5MP exir camera',
         product: '5 MP Indoor Fixed Turret Camera',
@@ -729,7 +703,7 @@ export default [
         ]
     },
     {
-        id: 38,
+        id: 36,
         category: 'Cameras',
         subCategory: 'Tandemvu ptz cameras',
         product: 'TandemVu 4-inch 2 MP 15X Colorful & IR Network Speed Dome',
@@ -751,7 +725,7 @@ export default [
         ]
     },
     {
-        id: 39,
+        id: 37,
         category: 'Cameras',
         subCategory: 'Tandemvu ptz cameras',
         product: 'TandemVu 4-inch 4 MP 25X Colorful & IR Network Speed Dome',
@@ -773,7 +747,7 @@ export default [
         ]
     },
     {
-        id: 40,
+        id: 38,
         category: 'Cameras',
         subCategory: 'Tandemvu ptz cameras',
         product: 'TandemVu 7-inch 4 MP 32X Colorful & IR Network Speed Dome',
@@ -795,7 +769,7 @@ export default [
         ]
     },
     {
-        id: 41,
+        id: 39,
         category: 'Cameras',
         subCategory: 'Tandemvu ptz cameras',
         product: 'TandemVu 8-inch Panoramic 4 MP 42X DarkFighter Network Speed Dome',
@@ -817,7 +791,7 @@ export default [
         ]
     },
     {
-        id: 42,
+        id: 40,
         category: 'Cameras',
         subCategory: 'Tandemvu ptz cameras',
         product: '7-inch 4 MP 32X Powered by DarkFighter IR Network Speed Dome',
@@ -839,7 +813,7 @@ export default [
         ]
     },
     {
-        id: 43,
+        id: 41,
         category: 'Network Products',
         subCategory: 'Routers',
         product: 'Hikvision 300M Single-band Wireless Router',
@@ -855,7 +829,7 @@ export default [
         ]
     },
     {
-        id: 44,
+        id: 42,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Slim Magnet Detector',
@@ -873,7 +847,7 @@ export default [
         ]
     },
     {
-        id: 45,
+        id: 43,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless PIR-Glass Break Detector',
@@ -893,7 +867,7 @@ export default [
         ]
     },
     {
-        id: 46,
+        id: 44,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Magnet Shock Detector',
@@ -912,7 +886,7 @@ export default [
         ]
     },
     {
-        id: 47,
+        id: 45,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Temperature Detector',
@@ -931,7 +905,7 @@ export default [
         ]
     },
     {
-        id: 48,
+        id: 46,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Photoelectric Smoke Detector',
@@ -948,7 +922,7 @@ export default [
         ]
     },
     {
-        id: 49,
+        id: 47,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Water Leak Detector',
@@ -967,7 +941,7 @@ export default [
         ]
     },
     {
-        id: 50,
+        id: 48,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless PIR-CAM Detector',
@@ -989,7 +963,7 @@ export default [
         ]
     },
     {
-        id: 51,
+        id: 49,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless PIR Curtain Detector',
@@ -1008,7 +982,7 @@ export default [
         ]
     },
     {
-        id: 52,
+        id: 50,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Tag',
@@ -1024,7 +998,7 @@ export default [
         ]
     },
     {
-        id: 53,
+        id: 51,
         category: 'Alarm system',
         subCategory: 'Wireless detectors',
         product: 'Wireless Slim Magnet Detector',
@@ -1044,7 +1018,7 @@ export default [
         ]
     },
     {
-        id: 54,
+        id: 52,
         category: 'Alarm system',
         subCategory: 'Wireless button',
         product: 'Wireless Emergency Button',
@@ -1062,7 +1036,7 @@ export default [
         ]
     },
     {
-        id: 55,
+        id: 53,
         category: 'Alarm system',
         subCategory: 'Wireless tester',
         product: 'Glass Break Tester',
@@ -1078,7 +1052,7 @@ export default [
         ]
     },
     {
-        id: 56,
+        id: 54,
         category: 'Alarm system',
         subCategory: 'Wireless repeater',
         product: 'Wireless Repeater',
@@ -1098,7 +1072,7 @@ export default [
         ]
     },
     {
-        id: 57,
+        id: 55,
         category: 'Alarm system',
         subCategory: 'Wireless external sounder',
         product: 'Wireless External Sounder',
@@ -1122,7 +1096,7 @@ export default [
         ]
     },
     {
-        id: 58,
+        id: 56,
         category: 'Alarm system',
         subCategory: 'Wireless keypad',
         product: 'Wireless LCD Keypad',
@@ -1143,7 +1117,7 @@ export default [
         ]
     },
     {
-        id: 59,
+        id: 57,
         category: 'Alarm system',
         subCategory: 'Wireless kit',
         product: 'AX PRO (868MHz) (DS-PWA64-L-WE)',
@@ -1173,7 +1147,7 @@ export default [
         ]
     },
     {
-        id: 60,
+        id: 58,
         category: 'Alarm system',
         subCategory: 'Wireless kit',
         product: 'AX PRO with big battery size',
@@ -1202,7 +1176,7 @@ export default [
         ]
     },
     {
-        id: 61,
+        id: 59,
         category: 'Alarm system',
         subCategory: 'Wireless kit',
         product: 'AX PRO (868MHz) (DS-PWA96-M-WE)',
@@ -1232,7 +1206,7 @@ export default [
         ]
     },
     {
-        id: 62,
+        id: 60,
         category: 'Hikvision switch',
         subCategory: 'Normal switch',
         product: '5 Port Fast Ethernet Unmanaged Desktop Switch',
@@ -1253,7 +1227,7 @@ export default [
         ]
     },
     {
-        id: 63,
+        id: 61,
         category: 'Hikvision switch',
         subCategory: 'Normal switch',
         product: '8 Port Fast Ethernet Unmanaged Desktop Switch',
@@ -1274,7 +1248,7 @@ export default [
         ]
     },
     {
-        id: 64,
+        id: 62,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: '5 Port Gigabit Unmanaged Desktop Switch',
@@ -1295,7 +1269,7 @@ export default [
         ]
     },
     {
-        id: 65,
+        id: 63,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: '8 Port Gigabit Unmanaged Desktop Switch',
@@ -1316,7 +1290,7 @@ export default [
         ]
     },
     {
-        id: 66,
+        id: 64,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: '8 Port Gigabit Unmanaged Switch',
@@ -1337,7 +1311,7 @@ export default [
         ]
     },
     {
-        id: 67,
+        id: 65,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: '16 Port Gigabit Unmanaged Switch',
@@ -1358,7 +1332,7 @@ export default [
         ]
     },
     {
-        id: 68,
+        id: 66,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: '24 Port Gigabit Unmanaged Switch',
@@ -1379,7 +1353,7 @@ export default [
         ]
     },
     {
-        id: 69,
+        id: 67,
         category: 'Hikvision switch',
         subCategory: 'Gigabit switch',
         product: 'SFP Module',
@@ -1399,7 +1373,7 @@ export default [
         ]
     },
     {
-        id: 70,
+        id: 68,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '4 Port Fast Ethernet Unmanaged Harsh POE Switch',
@@ -1426,7 +1400,7 @@ export default [
         ]
     },
     {
-        id: 71,
+        id: 69,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '4 Port Gigabit Unmanaged Harsh POE Switch',
@@ -1453,7 +1427,7 @@ export default [
         ]
     },
     {
-        id: 72,
+        id: 70,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '4 Port Fast Ethernet Smart POE Switch',
@@ -1472,7 +1446,7 @@ export default [
         ]
     },
     {
-        id: 73,
+        id: 71,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '24 Port Fast Ethernet Smart POE Switch',
@@ -1491,7 +1465,7 @@ export default [
         ]
     },
     {
-        id: 74,
+        id: 72,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '16 Port Fast Ethernet Web POE Switch',
@@ -1512,7 +1486,7 @@ export default [
         ]
     },
     {
-        id: 75,
+        id: 73,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '4 Port Fast Ethernet Unmanaged POE Switch',
@@ -1531,7 +1505,7 @@ export default [
         ]
     },
     {
-        id: 76,
+        id: 74,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '8 Port Fast Ethernet Unmanaged POE Switch',
@@ -1550,7 +1524,7 @@ export default [
         ]
     },
     {
-        id: 77,
+        id: 75,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '16 Port Fast Ethernet Unmanaged POE Switch',
@@ -1569,7 +1543,7 @@ export default [
         ]
     },
     {
-        id: 78,
+        id: 76,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '24 Port Fast Ethernet Unmanaged POE Switch',
@@ -1588,7 +1562,7 @@ export default [
         ]
     },
     {
-        id: 79,
+        id: 77,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '4 Port Gigabit Unmanaged POE Switch',
@@ -1612,7 +1586,7 @@ export default [
         ]
     },
     {
-        id: 80,
+        id: 78,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '8 Port Gigabit Unmanaged POE Switch',
@@ -1636,7 +1610,7 @@ export default [
         ]
     },
     {
-        id: 81,
+        id: 79,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '16 Port Gigabit Unmanaged POE Switch',
@@ -1662,7 +1636,7 @@ export default [
         ]
     },
     {
-        id: 82,
+        id: 80,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '24 Port Gigabit Unmanaged POE Switch',
@@ -1685,7 +1659,7 @@ export default [
         ]
     },
     {
-        id: 83,
+        id: 81,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '8 Port Fast Ethernet Web POE Switch',
@@ -1706,7 +1680,7 @@ export default [
         ]
     },
     {
-        id: 84,
+        id: 82,
         category: 'Hikvision switch',
         subCategory: 'POE switch',
         product: '24 Port Gigabit Full Managed POE Switch',
@@ -1732,7 +1706,7 @@ export default [
         ]
     },
     {
-        id: 85,
+        id: 83,
         category: 'Kuwes Product',
         subCategory: 'Cable',
         product: 'UTP Cat 6A Network Cable',
@@ -1751,7 +1725,7 @@ export default [
         ]
     },
     {
-        id: 86,
+        id: 84,
         category: 'Kuwes Product',
         subCategory: 'Cable',
         product: 'CAT6 UTP',
@@ -1773,7 +1747,7 @@ export default [
         ]
     },
     {
-        id: 87,
+        id: 85,
         category: 'Kuwes Product',
         subCategory: 'Patch Panel',
         product: 'Kuwes 48Port Patch Panel',
@@ -1795,7 +1769,7 @@ export default [
         ]
     },
     {
-        id: 88,
+        id: 86,
         category: 'Kuwes Product',
         subCategory: 'Patch Panel',
         product: 'Kuwes 24Port Patch Panel',
@@ -1818,7 +1792,7 @@ export default [
         ]
     },
     {
-        id: 89,
+        id: 87,
         category: 'Kuwes Product',
         subCategory: 'Tools',
         product: 'Kuwes Punch Down Tool',
@@ -1833,7 +1807,7 @@ export default [
         ]
     },
     {
-        id: 90,
+        id: 88,
         category: 'Kuwes Product',
         subCategory: 'Tools',
         product: 'Kuwes Crimping Tool',
@@ -1848,7 +1822,7 @@ export default [
         ]
     },
     {
-        id: 91,
+        id: 89,
         category: 'Kuwes Product',
         subCategory: 'Tools',
         product: 'Kuwes KS-470 Cable Tracker',
@@ -1863,7 +1837,7 @@ export default [
         ]
     },
     {
-        id: 92,
+        id: 90,
         category: 'Network Products',
         subCategory: 'Routers',
         product: 'AC1200 Wireless Router',
@@ -1881,7 +1855,7 @@ export default [
         ]
     },
     {
-        id: 93,
+        id: 91,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 4U NETWORK RACK',
@@ -1906,7 +1880,7 @@ export default [
         ]
     },
     {
-        id: 94,
+        id: 92,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 6U NETWORK RACK',
@@ -1932,7 +1906,7 @@ export default [
         ]
     },
     {
-        id: 95,
+        id: 93,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 9U NETWORK RACK',
@@ -1956,7 +1930,7 @@ export default [
         ]
     },
     {
-        id: 96,
+        id: 94,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 12U NETWORK RACK',
@@ -1978,7 +1952,7 @@ export default [
         ]
     },
     {
-        id: 97,
+        id: 95,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 18U NETWORK RACK',
@@ -1999,7 +1973,7 @@ export default [
         ]
     },
     {
-        id: 98,
+        id: 96,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 22U NETWORK RACK',
@@ -2020,7 +1994,7 @@ export default [
         ]
     },
     {
-        id: 99,
+        id: 97,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 32U NETWORK RACK',
@@ -2039,7 +2013,7 @@ export default [
         ]
     },
     {
-        id: 100,
+        id: 98,
         category: 'Network Products',
         subCategory: 'Network Rack',
         product: 'MAXIMA 42U NETWORK RACK',
@@ -2057,7 +2031,7 @@ export default [
         ]
     },
     {
-        id: 101,
+        id: 99,
         category: 'Kuwes Product',
         subCategory: 'Cable',
         product: '90m Mini RG59 Coaxial Cable with Power Cable',
@@ -2076,7 +2050,7 @@ export default [
         ]
     },
     {
-        id: 102,
+        id: 100,
         category: 'Kuwes Product',
         subCategory: 'Cable',
         product: '305 m CAT6 UTP Network Cable (CCA,0.565 mm)',
@@ -2094,7 +2068,7 @@ export default [
         ]
     },
     {
-        id: 103,
+        id: 101,
         category: 'Kuwes Product',
         subCategory: 'Cable',
         product: '305 m CAT6 UTP Network Cable (Solid Copper)',
@@ -2115,7 +2089,7 @@ export default [
         ]
     },
     {
-        id: 104,
+        id: 102,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Video Intercom KIT (DS-KIS602)',
@@ -2135,7 +2109,7 @@ export default [
         ]
     },
     {
-        id: 105,
+        id: 103,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Villa Analog Kit (DS-KIS203T)',
@@ -2152,7 +2126,7 @@ export default [
         ]
     },
     {
-        id: 106,
+        id: 104,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Villa Analog Kit (DS-KIS204T)',
@@ -2169,7 +2143,7 @@ export default [
         ]
     },
     {
-        id: 107,
+        id: 105,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Fingerprint Terminal Kit',
@@ -2187,7 +2161,7 @@ export default [
         ]
     },
     {
-        id: 108,
+        id: 106,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Value Series Face Access Terminal (DS-K1T331W)',
@@ -2208,7 +2182,7 @@ export default [
         ]
     },
     {
-        id: 109,
+        id: 107,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: '3.5inch Plastic IP Door Station',
@@ -2227,7 +2201,7 @@ export default [
         ]
     },
     {
-        id: 110,
+        id: 108,
         category: 'Video Door Phone',
         subCategory: 'Door Phone',
         product: 'Tripod Mount',
@@ -2243,7 +2217,7 @@ export default [
         ]
     },
     {
-        id: 111,
+        id: 109,
         category: 'Video Door Phone',
         subCategory: 'Minmoe Product',
         product: 'Value Series Fingerprint Time Attendance Terminal',
@@ -2268,7 +2242,7 @@ export default [
         ]
     },
     {
-        id: 112,
+        id: 110,
         category: 'Video Door Phone',
         subCategory: 'Minmoe Product',
         product: 'Value Series Face Access Terminal (DS-K1T343MFWX)',
@@ -2290,7 +2264,7 @@ export default [
         ]
     },
     {
-        id: 113,
+        id: 111,
         category: 'Video Door Phone',
         subCategory: 'Minmoe Product',
         product: 'Value Series Face Access Terminal (DS-K1T320EFWX)',
@@ -2311,7 +2285,7 @@ export default [
         ]
     },
     {
-        id: 114,
+        id: 112,
         category: 'Video Door Phone',
         subCategory: 'Access Control',
         product: 'Pro 1102 Series Card Reader',
@@ -2330,7 +2304,7 @@ export default [
         ]
     },
     {
-        id: 115,
+        id: 113,
         category: 'Video Door Phone',
         subCategory: 'Access Control',
         product: 'Value Series Card Terminal',
@@ -2349,7 +2323,7 @@ export default [
         ]
     },
     {
-        id: 116,
+        id: 114,
         category: 'Video Door Phone',
         subCategory: 'Access Control',
         product: 'Value Series Network Wire Card Terminal',
@@ -2368,8 +2342,8 @@ export default [
         ]
     },
     {
-        id: 117,
-        category: 'Video Door Phone',
+        id: 115,
+        category: 'Accessories',
         subCategory: 'Magnetic Lock',
         product: 'Value Series Magnetic Lock (DS-K4H258)',
         imageUrl: '/images/product-images/phone15.jpg',
@@ -2387,8 +2361,8 @@ export default [
         ]
     },
     {
-        id: 118,
-        category: 'Video Door Phone',
+        id: 116,
+        category: 'Accessories',
         subCategory: 'Magnetic Lock',
         product: 'Exit & Emergency Button',
         imageUrl: '/images/product-images/phone16.jpg',
@@ -2403,8 +2377,8 @@ export default [
         ]
     },
     {
-        id: 119,
-        category: 'Video Door Phone',
+        id: 117,
+        category: 'Accessories',
         subCategory: 'Magnetic Lock',
         product: 'Value Series Magnetic Lock Bracket',
         imageUrl: '/images/product-images/phone17.jpg',
@@ -2418,8 +2392,8 @@ export default [
         ]
     },
     {
-        id: 120,
-        category: 'Video Door Phone',
+        id: 118,
+        category: 'Accessories',
         subCategory: 'Magnetic Lock',
         product: 'Exit & Emergency Button (DS-K7P03)',
         imageUrl: '/images/product-images/phone18.jpg',
@@ -2435,8 +2409,8 @@ export default [
         ]
     },
     {
-        id: 121,
-        category: 'Video Door Phone',
+        id: 119,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Hikvision Bracket for Magnetic Lock',
         imageUrl: '/images/product-images/phone19.jpg',
@@ -2453,8 +2427,8 @@ export default [
         ]
     },
     {
-        id: 122,
-        category: 'Video Door Phone',
+        id: 120,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Wall mount (DS-1602ZJ)',
         imageUrl: '/images/product-images/phone20.jpg',
@@ -2470,8 +2444,8 @@ export default [
         ]
     },
     {
-        id: 123,
-        category: 'Video Door Phone',
+        id: 121,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Pendant Mount (DS-1662ZJ)',
         imageUrl: '/images/product-images/phone21.jpg',
@@ -2487,8 +2461,8 @@ export default [
         ]
     },
     {
-        id: 124,
-        category: 'Video Door Phone',
+        id: 122,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Wall mount (DS-1605ZJ)',
         imageUrl: '/images/product-images/phone22.jpg',
@@ -2504,8 +2478,8 @@ export default [
         ]
     },
     {
-        id: 125,
-        category: 'Video Door Phone',
+        id: 123,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Brackets',
         imageUrl: '/images/product-images/phone23.jpg',
@@ -2521,8 +2495,8 @@ export default [
         ]
     },
     {
-        id: 126,
-        category: 'Video Door Phone',
+        id: 124,
+        category: 'Accessories',
         subCategory: 'Bracket & Tripod Accessories',
         product: 'Bracket (DS-2909ZJ)',
         imageUrl: '/images/product-images/phone24.jpg',
@@ -2536,8 +2510,8 @@ export default [
         ]
     },
     {
-        id: 127,
-        category: 'Video Door Phone',
+        id: 125,
+        category: 'Accessories',
         subCategory: 'Electric Lock',
         product: 'Pro Series Electric Motor Lock',
         imageUrl: '/images/product-images/phone25.jpg',

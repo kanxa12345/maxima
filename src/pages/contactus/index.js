@@ -70,7 +70,7 @@ const index = () => {
                             </form>
                         </div>
                         <div className='lg:w-1/2 w-full relative h-auto border-1'>
-                            <iframe className='w-full sm:h-[430px] h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.0127797679693!2d85.34188247607288!3d27.747751823707112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194df9aa4eff%3A0xaf4b9c99b44bebb5!2sCaldron%20Graphics%20Nepal%2C%20Apex%20Nepal%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1702878534547!5m2!1sen!2snp" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe className='w-full sm:h-[430px] h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4315.308701976735!2d85.3567882245635!3d27.753885332250917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1d6903fddbf1%3A0x730d0ae7a597378a!2sHIKVISION%20TOWER!5e0!3m2!1sne!2snp!4v1704089193858!5m2!1sne!2snp" allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             <div className='absolute bg-white border border-gray-300 sm:w-2/3 w-full bottom-2 sm:right-2 right-0 p-4 flex flex-col items-start gap-3'>
                                 <div>
                                     <h4 className='md:text-lg font-medium'>Location</h4>

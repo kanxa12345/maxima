@@ -11,16 +11,9 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import Image from "next/image";
+import clientData from "@/data/clientData";
 
 const Client = () => {
-  const clientImages = [
-    "/images/clients-images/alwish.png",
-    "/images/clients-images/high-vision.png",
-    "/images/clients-images/j4.png",
-    "/images/clients-images/paragon.png",
-    "/images/clients-images/supreme.png",
-    "/images/clients-images/tejasvi.png",
-  ];
   return (
     <section className="md:py-20 py-16 bg-gray-100">
       <div className="container flex flex-col items-center gap-4">
@@ -55,15 +48,15 @@ const Client = () => {
               },
             }}
           >
-            {clientImages.map((image, index) => (
+            {clientData.map((clientItem, index) => (
               <SwiperSlide key={index}>
                 <Image
-                  src={image}
-                  height={200}
-                  width={200}
+                  src={clientItem.imageUrl}
+                  height={2000}
+                  width={2000}
                   priority={true}
                   className="md:h-[90px] h-[40px] w-full bg-white p-1 object-contain"
-                  alt="client-image"
+                  alt={clientItem.companyName}
                 />
               </SwiperSlide>
             ))}
