@@ -50,7 +50,7 @@ const DisplayCart = () => {
   };
 
   return (
-    <div className="fixed right-0 lg:top-[69px] sm:top-[59px] top-[45px] bg-white h-full border px-4 pt-8 pb-[130px] 2xl:w-1/4 xl:w-1/3 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
+    <div className="fixed right-0 lg:top-[69px] sm:top-[59px] top-[44px] bg-white h-full border px-4 pt-8 pb-[130px] 2xl:w-1/4 xl:w-1/3 overflow-y-auto flex flex-col items-start gap-4 z-[100]">
       <h2 className="md:text-2xl text-xl font-medium">Your cart</h2>
       <div className="w-full border p-4 flex flex-col items-start gap-10 overflow-y-auto">
         {groupedArray.length > 0 ? (

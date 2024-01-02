@@ -40,13 +40,13 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
       <div className="flex flex-col items-start gap-[2px] absolute top-28 right-3 lg:-right-10 lg:opacity-0 lg:group-hover:right-3 lg:group-hover:opacity-100 transition-all duration-200 ease-linear">
         <button
           onClick={() => HandleAddWishlist(dataItem)}
-          className="text-xs flex justify-center items-center h-[25px] w-[25px] rounded-full bg-white bg-opacity-90 border border-gray-600"
+          className="sm:text-xs text-[10px] flex justify-center items-center sm:h-[25px] h-5 sm:w-[25px] w-5 rounded-full bg-white bg-opacity-90 border border-gray-600"
         >
           <i aria-hidden={true} className="fa-solid fa-heart"></i>
         </button>
         <button
           onClick={() => HandleAddCart(dataItem)}
-          className="text-xs flex justify-center items-center h-[25px] w-[25px] rounded-full bg-white bg-opacity-90 border border-gray-600"
+          className="sm:text-xs text-[10px] flex justify-center items-center sm:h-[25px] h-5 sm:w-[25px] w-5 rounded-full bg-white bg-opacity-90 border border-gray-600"
         >
           <i aria-hidden={true} className="fa-solid fa-cart-shopping"></i>
         </button>

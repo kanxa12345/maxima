@@ -173,7 +173,7 @@ const Header = () => {
           <div className="md:w-1/3 w-1/2 relative">
             <input
               type="search"
-              placeholder="search product"
+              placeholder="search here"
               value={text}
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
