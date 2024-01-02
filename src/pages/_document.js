@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -10,5 +10,5 @@ export default function Document() {
         <script src="https://kit.fontawesome.com/27bd3bf8d7.js" async></script>
       </body>
     </Html>
-  )
+  );
 }

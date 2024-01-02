@@ -26,7 +26,6 @@ const Header = () => {
     if (!groupedData[dataItem.category]) {
       groupedData[dataItem.category] = {
         category: dataItem.category,
-        thumbnailImage: dataItem.imageUrl,
         subcategories: {},
       };
     }
@@ -35,7 +34,6 @@ const Header = () => {
     if (!categoryGroup.subcategories[dataItem.subCategory]) {
       categoryGroup.subcategories[dataItem.subCategory] = {
         subCategory: dataItem.subCategory,
-        thumbnailImage: dataItem.imageUrl,
         products: [dataItem],
       };
     } else {

@@ -29,7 +29,7 @@ const ProductItem = ({ category, subCategory, dataItem }) => {
         className="overflow-hidden inline-block sm:h-[200px] h-[150px] w-full"
       >
         <Image
-          src={dataItem.imageUrl}
+          src={dataItem.thumbnail}
           priority={true}
           height={1000}
           width={1000}

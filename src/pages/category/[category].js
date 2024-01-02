@@ -15,7 +15,7 @@ const category = () => {
     if (!groupedData[dataItem.subCategory]) {
       groupedData[dataItem.subCategory] = {
         title: dataItem.subCategory,
-        thumbnailImage: dataItem.imageUrl,
+        thumbnailImage: dataItem.thumbnail,
         products: [dataItem],
       };
     } else {

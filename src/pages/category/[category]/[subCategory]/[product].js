@@ -7,6 +7,8 @@ import ProductItem from "../ProductItem";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/Cartslice";
 import { addToWishlist } from "@/redux/Wishlistslice";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const product = () => {
   const router = useRouter();
@@ -23,6 +25,21 @@ const product = () => {
       item.subCategory === subCategory &&
       item.product !== product
   );
+
+  // filter images from data
+  const isImage = (value) => {
+    const imageExtensionRegex = /\.(jpg|jpeg|png|gif|bmp)$/i;
+    return imageExtensionRegex.test(value);
+  };
+
+  const images = data && Object.values(data).filter((value) => isImage(value));
+  const galleryItems =
+    images &&
+    images.length > 0 &&
+    images.map((imagePath) => ({
+      original: imagePath,
+      thumbnail: imagePath,
+    }));
 
   const dispatch = useDispatch();
   const HandleAddCart = (item) => {
@@ -93,14 +110,13 @@ const product = () => {
         {data && (
           <div className="container flex md:flex-row flex-col gap-8">
             <div className="md:w-1/3 w-full h-auto">
-              <div className="sticky top-0">
-                <Image
-                  src={data.imageUrl}
-                  priority={true}
-                  width={1000}
-                  height={1000}
-                  alt={data.product}
-                  className="w-full sm:h-[400px] h-[300px] object-contain"
+              <div className="sticky top-0 h-auto w-full">
+                <ImageGallery
+                  showNav={false}
+                  showFullscreenButton={false}
+                  showPlayButton={false}
+                  items={galleryItems}
+                  slideOnThumbnailOver={true}
                 />
               </div>
             </div>
@@ -156,7 +172,7 @@ const product = () => {
                   ))}
                 </div>
               )}
-              <div className="flex flex-col items-start mt-6 w-2/3">
+              <div className="flex flex-col items-start mt-6 lg:w-2/3 sm:w-full w-2/3">
                 <h3 className="text-xl font-semibold">Review product</h3>
                 <form
                   onSubmit={handleSubmit}

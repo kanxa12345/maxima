@@ -11,7 +11,7 @@ const ProductCat = () => {
     if (!groupedData[dataItem.category]) {
       groupedData[dataItem.category] = {
         title: dataItem.category,
-        thumbnailImage: dataItem.imageUrl,
+        thumbnailImage: dataItem.thumbnail,
         products: [dataItem],
       };
     } else {
