@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const index = () => {
+const Index = () => {
   const [activeProvince, setActiveProvince] = useState(0);
   const [activeDistrict, setActiveDistrict] = useState(0);
 
@@ -201,4 +201,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

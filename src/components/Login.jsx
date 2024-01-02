@@ -131,7 +131,7 @@ const Login = ({ closeModal, setOpenLogin }) => {
             </a>
           </form>
           <span className="text-sm flex w-full border-t border-gray-400 pt-3 justify-center gap-1 items-center text-gray-700">
-            Don't have an account?
+            Don&apos;t have an account?
             <button
               onClick={() => handleActiveBox(1)}
               className="inline-block text-brandColor hover:underline"

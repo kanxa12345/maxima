@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const index = () => {
+const Index = () => {
   const initialForm = {
     name: "",
     mobile: "",
@@ -159,4 +159,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

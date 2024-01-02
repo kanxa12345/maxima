@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import ProductItem from './ProductItem';
 
-const subCategory = () => {
+const SubCategory = () => {
     const router = useRouter();
     const { category, subCategory } = router.query;
     const data = ProductData.filter(item => item.category === category && item.subCategory === subCategory)
@@ -38,4 +38,4 @@ const subCategory = () => {
     )
 }
 
-export default subCategory;
+export default SubCategory;

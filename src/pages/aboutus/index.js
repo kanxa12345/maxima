@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const index = () => {
+const Index = () => {
   return (
     <>
       <section className='md:h-[150px] h-[100px] relative'>
@@ -37,4 +37,4 @@ const index = () => {
   )
 }
 
-export default index;
+export default Index;

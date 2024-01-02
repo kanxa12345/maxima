@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         imageUrl: '/images/clients-images/supreme.png',
@@ -99,3 +99,5 @@ export default [
         website: '',
     },
 ]
+
+export default data;

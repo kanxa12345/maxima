@@ -1,4 +1,4 @@
-export default [
+const data = [
   {
     id: 1,
     category: "Laptops & Computers",
@@ -2991,3 +2991,5 @@ export default [
     ],
   },
 ];
+
+export default data;

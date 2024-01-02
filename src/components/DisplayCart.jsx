@@ -57,7 +57,7 @@ const DisplayCart = () => {
           groupedArray.map((dataItem, index) => (
             <div key={index} className="flex gap-4 w-full">
               <Image
-                src={dataItem.products[0].imageUrl}
+                src={dataItem.products[0].thumbnail}
                 priority={true}
                 height={2000}
                 width={2000}

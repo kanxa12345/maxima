@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         icon: 'fa-solid fa-truck',
@@ -20,3 +20,5 @@ export default [
         title: '7 days return'
     },
 ]
+
+export default data;

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const category = () => {
+const Category = () => {
   const router = useRouter();
   const { category } = router.query;
   const data = ProductData.filter(item => item.category === category)
@@ -55,5 +55,5 @@ const category = () => {
   )
 }
 
-export default category;
+export default Category;
 

@@ -10,7 +10,7 @@ import { addToWishlist } from "@/redux/Wishlistslice";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const product = () => {
+const Product = () => {
   const router = useRouter();
   const { category, subCategory, product } = router.query;
   const data = ProductData.find(
@@ -250,4 +250,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default Product;

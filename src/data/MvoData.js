@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         title: 'Mission',
@@ -15,3 +15,5 @@ export default [
         description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas fuga ullam illum exercitationem, cum rem est soluta laudantium nam vel accusantium iusto veniam suscipit, facere quisquam explicabo quae debitis deserunt, placeat aut iste quo id! Animi amet nemo nobis non hic et, consequuntur vel neque voluptatem ad aspernatur iste nam.'
     },
 ]
+
+export default data;
