@@ -18,7 +18,7 @@ const reducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, reducer)
 export const store = configureStore({
     reducer: persistedReducer,
-    middleware: () => ([logger])
+    middleware: () => [logger]
 });
 
 
