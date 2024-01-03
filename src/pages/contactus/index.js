@@ -26,10 +26,10 @@ const Index = () => {
     <>
       <section className="md:h-[150px] h-[100px] relative">
         <Image
-          src="/images/banner-image/img1.avif"
+          src="/images/banner-image/banner3.jpg"
           priority={true}
-          height={200}
-          width={200}
+          height={2000}
+          width={2000}
           className="absolute w-full h-full indent-0 object-cover"
           alt="bg-image"
         />

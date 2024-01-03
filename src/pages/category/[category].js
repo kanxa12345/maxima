@@ -26,7 +26,7 @@ const Category = () => {
   return (
     <>
       <section className='md:h-[150px] h-[100px] relative'>
-        <Image src="/images/banner-image/img1.avif" priority={true} height={200} width={200} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
+        <Image src="/images/banner-image/banner3.jpg" priority={true} height={2000} width={2000} className='absolute w-full h-full indent-0 object-cover' alt="bg-image" />
         <div className='absolute w-full h-full inset-0 bg-black opacity-70'></div>
         <div className="container flex justify-center items-center h-full relative text-white">
           <ul className='flex items-center gap-1 md:text-lg font-medium'>
